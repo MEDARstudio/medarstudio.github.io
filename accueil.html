@@ -785,6 +785,65 @@
                 document.body.style.overflow = 'auto';
             }
         });
+        // --- MODIFICATION ICI : Gestion de la session sur toutes les pages ---
+document.addEventListener('DOMContentLoaded', function() {
+    checkUserSessionOnPageLoad();
+});
+
+function checkUserSessionOnPageLoad() {
+    const userData = localStorage.getItem('fantasyUser');
+    if (userData) {
+        try {
+            const user = JSON.parse(userData);
+            displayUserProfile(user); // Cette fonction doit exister sur chaque page
+        } catch (e) {
+            console.error("Erreur lors du parsing des données utilisateur:", e);
+            localStorage.removeItem('fantasyUser');
+             // Rediriger vers la page d'accueil si les données sont corrompues
+             if (window.location.pathname !== '/index.html' && !window.location.pathname.endsWith('/index.html')) {
+                 window.location.href = 'index.html';
+             }
+        }
+    } else {
+         // Si l'utilisateur n'est pas connecté, rediriger vers la page d'accueil
+         // Sauf s'il est déjà sur la page d'accueil
+         if (window.location.pathname !== '/index.html' && !window.location.pathname.endsWith('/index.html')) {
+             window.location.href = 'index.html';
+         }
+    }
+}
+
+// Fonction pour afficher le profil utilisateur (doit être présente sur chaque page)
+function displayUserProfile(user) {
+    const userProfile = document.getElementById('userProfile');
+    if (userProfile) { // Vérifier que l'élément existe sur la page
+        userProfile.innerHTML = `
+            <div class="user-info">
+                <img src="${user.picture}" alt="${user.name}" class="user-avatar">
+                <span class="user-name">${user.name}</span>
+            </div>
+            <button class="logout-btn" id="logoutBtn">Déconnexion</button>
+        `;
+        // Ajouter l'événement de déconnexion
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', logout);
+        }
+    }
+}
+
+// Fonction de déconnexion (doit être présente sur chaque page)
+function logout() {
+    localStorage.removeItem('fantasyUser'); // Supprimer les données utilisateur
+    // Masquer le profil utilisateur
+    const userProfile = document.getElementById('userProfile');
+    if (userProfile) {
+        userProfile.innerHTML = '';
+    }
+    // Rediriger vers la page d'accueil
+    window.location.href = 'index.html';
+}
+// --- FIN DE LA MODIFICATION ---
     </script>
 </body>
 
