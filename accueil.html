@@ -1,850 +1,163 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Fantasy Botola Pro Inwi</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        :root {
-            --primary: #6A0DAD; /* Violet foncé */
-            --secondary: #9370DB; /* Violet moyen */
-            --accent: #BA55D3; /* Violet orchidée */
-            --light: #f8f9fa;
-            --dark: #212529;
-            --gray: #6c757d;
-            --dark-bg: #1a0033;
-            --card-bg: rgba(106, 13, 173, 0.1);
-            --hover-bg: rgba(186, 85, 211, 0.15);
-            --success: #4CAF50;
-            --warning: #FFC107;
-            --danger: #F44336;
-            --field-green: #1e7e34;
-        }
-        body {
-            background: linear-gradient(135deg, var(--dark-bg) 0%, #2d0052 100%);
-            color: var(--light);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        /* En-tête */
-        header {
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(10px);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .logo-icon {
-            background: var(--primary);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-        .logo-text span {
-            color: var(--accent);
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        nav a {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        nav a:hover {
-            color: var(--accent);
-            background: var(--hover-bg);
-            transform: translateY(-2px);
-        }
-        nav a.active {
-            color: var(--accent);
-            background: var(--hover-bg);
-        }
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .user-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--accent);
-        }
-        .user-name {
-            font-weight: 500;
-            max-width: 150px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-        /* Toggle menu mobile */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--light);
-            font-size: 1.8rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-        .menu-toggle:hover {
-            background: var(--hover-bg);
-        }
-        /* Menu mobile */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 80%;
-            height: 100vh;
-            background: rgba(26, 0, 51, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            transition: right 0.4s ease;
-            padding: 2rem;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-        }
-        .mobile-menu.active {
-            right: 0;
-        }
-        .mobile-menu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(186, 85, 211, 0.3);
-        }
-        .close-menu {
-            background: none;
-            border: none;
-            color: var(--light);
-            font-size: 1.8rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-        .close-menu:hover {
-            background: var(--hover-bg);
-        }
-        .mobile-nav ul {
-            display: flex;
-            flex-direction: column;
-            list-style: none;
-            gap: 1.5rem;
-        }
-        .mobile-nav a {
-            color: var(--light);
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 500;
-            padding: 1rem;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: all 0.3s ease;
-        }
-        .mobile-nav a:hover, .mobile-nav a.active {
-            color: var(--accent);
-            background: var(--hover-bg);
-        }
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(3px);
-            z-index: 999;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-        .overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        /* Section principale */
-        .main-container {
-            max-width: 1400px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-        }
-        .page-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent);
-        }
-        /* Deadline section (en haut) */
-        .deadline-section {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(186, 85, 211, 0.3);
-            text-align: center;
-            position: relative;
-        }
-        .deadline-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .deadline-timer {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--light); /* Compte à rebours en blanc */
-        }
-        .deadline-date {
-            font-size: 1.1rem;
-            color: #c0c0c0;
-            margin-top: 0.5rem;
-        }
-        /* Votre Performance */
-        .performance-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        .performance-card {
-            background: var(--card-bg);
-            border-radius: 10px;
-            padding: 1.5rem;
-            text-align: center;
-            border: 1px solid rgba(186, 85, 211, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        .performance-card.violet {
-            background: rgba(106, 13, 173, 0.15);
-            border-color: rgba(186, 85, 211, 0.3);
-        }
-        .performance-card.violet-light {
-            background: rgba(186, 85, 211, 0.1);
-            border-color: rgba(186, 85, 211, 0.3);
-        }
-        .performance-card.white {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(186, 85, 211, 0.3);
-        }
-        .performance-label {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: #c0c0c0;
-        }
-        .performance-value {
-            font-size: 2rem;
-            font-weight: 700;
-        }
-        .performance-value.points {
-            color: var(--accent);
-        }
-        .performance-value.budget {
-            color: var(--accent);
-        }
-        .performance-value.leagues {
-            color: var(--accent);
-        }
-        .performance-change {
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-        .performance-change.positive {
-            color: var(--success);
-        }
-        .performance-change.negative {
-            color: var(--danger);
-        }
-        /* Prochaine Journée */
-        .next-match-section {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(186, 85, 211, 0.3);
-        }
-        .match-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-            color: var(--accent);
-            font-size: 1.2rem;
-        }
-        .match-info {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-        }
-        .team-logo {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-        }
-        .team-name {
-            font-weight: 600;
-            color: var(--light);
-        }
-        .vs {
-            color: var(--gray);
-            font-weight: 600;
-        }
-        .match-deadline {
-            text-align: center;
-            margin: 1rem 0;
-            color: var(--light);
-            font-size: 0.9rem;
-        }
-        .transfer-progress {
-            width: 100%;
-            height: 10px;
-            background: rgba(186, 85, 211, 0.2);
-            border-radius: 5px;
-            overflow: hidden;
-            margin: 1rem 0;
-        }
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(to right, #6A0DAD, #BA55D3);
-            border-radius: 5px;
-            width: 65%; /* Exemple de progression */
-        }
-        .progress-text {
-            text-align: center;
-            color: var(--gray);
-            font-size: 0.8rem;
-        }
-        /* Popup */
-        .popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(3px);
-            z-index: 1001;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-        .popup.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        .popup-content {
-            background: rgba(26, 0, 51, 0.95);
-            border-radius: 15px;
-            padding: 2rem;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-            border: 1px solid var(--accent);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transform: translateY(20px);
-            transition: transform 0.4s ease;
-        }
-        .popup.active .popup-content {
-            transform: translateY(0);
-        }
-        .popup-icon {
-            font-size: 3rem;
-            color: var(--warning);
-            margin-bottom: 1.5rem;
-        }
-        .popup-title {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--accent);
-        }
-        .popup-message {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            color: #e0e0e0;
-            line-height: 1.6;
-        }
-        .popup-button {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 0.8rem 2rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid var(--accent);
-        }
-        .popup-button:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
-        }
-        /* Responsive */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
-            }
-            .user-info {
-                width: 100%;
-                justify-content: space-between;
-            }
-            nav ul {
-                display: none;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .performance-section {
-                grid-template-columns: 1fr;
-            }
-            .next-match-section {
-                margin-bottom: 1.5rem;
-            }
-            .match-info {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            .team-logo {
-                width: 35px;
-                height: 35px;
-            }
-            .team-name {
-                font-size: 1rem;
-            }
-            .vs {
-                font-size: 1rem;
-            }
-            .transfer-progress {
-                height: 8px;
-            }
-            .progress-bar {
-                height: 8px;
-            }
-            .progress-text {
-                font-size: 0.7rem;
-            }
-            .deadline-timer {
-                font-size: 1.5rem;
-            }
-            .deadline-title {
-                font-size: 1.2rem;
-            }
-            .deadline-date {
-                font-size: 0.9rem;
-            }
-            .page-title {
-                font-size: 2rem;
-            }
-            .performance-value {
-                font-size: 1.5rem;
-            }
-            .match-header {
-                font-size: 1.1rem;
-            }
-            .match-deadline {
-                font-size: 0.8rem;
-            }
-        }
-        @media (max-width: 480px) {
-            .main-container {
-                padding: 0 1rem;
-            }
-            .deadline-section, .performance-section, .next-match-section {
-                padding: 1rem;
-                margin-bottom: 1rem;
-            }
-            .performance-card {
-                padding: 1rem;
-            }
-            .match-info {
-                padding: 0.8rem;
-            }
-            .logo-text {
-                font-size: 1.5rem;
-            }
-            .user-name {
-                font-size: 0.9rem;
-                max-width: 100px;
-            }
-            .menu-toggle {
-                font-size: 1.5rem;
-            }
-            .popup-content {
-                padding: 1.5rem;
-            }
-            .popup-title {
-                font-size: 1.5rem;
-            }
-            .popup-message {
-                font-size: 1rem;
-            }
-            .popup-button {
-                padding: 0.7rem 1.5rem;
-                font-size: 1rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accueil - Fantasy Botola Pro Inwi</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* --- Inclure ici tout ton CSS existant de page3.html --- */
+body { background: linear-gradient(135deg, #1a0033 0%, #2d0052 100%); color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+/* ... Reste du CSS que tu avais ... */
+</style>
 </head>
 <body>
-    <!-- En-tête -->
-    <header>
+
+<!-- En-tête et menu mobile comme dans ton fichier original -->
+<header>
+    <div class="logo">
+        <div class="logo-icon"><i class="fas fa-futbol"></i></div>
+        <div class="logo-text">Fantasy <span>Botola Pro</span> Inwi</div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="page3.html" class="nav-link active"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="equipe.html" class="nav-link"><i class="fas fa-users"></i> Mon Équipe</a></li>
+            <li><a href="#" class="nav-link" id="liguesLink"><i class="fas fa-trophy"></i> Mes Ligues</a></li>
+        </ul>
+    </nav>
+    <div class="user-info">
+        <div class="user-profile">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Utilisateur" class="user-avatar">
+            <span class="user-name">Utilisateur</span>
+        </div>
+    </div>
+    <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+</header>
+
+<!-- Mobile menu et overlay (idem page3 original) -->
+<div class="overlay" id="overlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
         <div class="logo">
-            <div class="logo-icon">
-                <i class="fas fa-futbol"></i>
-            </div>
+            <div class="logo-icon"><i class="fas fa-futbol"></i></div>
             <div class="logo-text">Fantasy <span>Botola Pro</span> Inwi</div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#" class="nav-link active"><i class="fas fa-home"></i> Accueil</a></li>
-                <li><a href="equipe.html" class="nav-link"><i class="fas fa-users"></i> Mon Équipe</a></li>
-                <li><a href="#" class="nav-link" id="liguesLink"><i class="fas fa-trophy"></i> Mes Ligues</a></li>
-            </ul>
-        </nav>
-        <div class="user-info">
-            <div class="user-profile">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Utilisateur" class="user-avatar">
-                <span class="user-name">Ahmed Benali</span>
-            </div>
-        </div>
-        <button class="menu-toggle" id="menuToggle">
-            <i class="fas fa-bars"></i>
-        </button>
-    </header>
-    
-    <!-- Menu mobile -->
-    <div class="overlay" id="overlay"></div>
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-futbol"></i>
-                </div>
-                <div class="logo-text">Fantasy <span>Botola Pro</span> Inwi</div>
-            </div>
-            <button class="close-menu" id="closeMenu">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <nav class="mobile-nav">
-            <ul>
-                <li><a href="#" class="nav-link active"><i class="fas fa-home"></i> Accueil</a></li>
-                <li><a href="equipe.html" class="nav-link"><i class="fas fa-users"></i> Mon Équipe</a></li>
-                <li><a href="#" class="nav-link" id="mobileLiguesLink"><i class="fas fa-trophy"></i> Mes Ligues</a></li>
-            </ul>
-        </nav>
+        <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
     </div>
-    
-    <!-- Popup -->
-    <div class="popup" id="liguesPopup">
-        <div class="popup-content">
-            <div class="popup-icon">
-                <i class="fas fa-exclamation-circle"></i>
-            </div>
-            <h2 class="popup-title">Fonctionnalité en cours de développement</h2>
-            <p class="popup-message">
-                Les ligues ne sont pas disponibles pour le moment. Veuillez patienter jusqu'à ce que nous activions cette option.
-            </p>
-            <button class="popup-button" id="closePopup">Fermer</button>
-        </div>
+    <nav class="mobile-nav">
+        <ul>
+            <li><a href="page3.html" class="nav-link active"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="equipe.html" class="nav-link"><i class="fas fa-users"></i> Mon Équipe</a></li>
+            <li><a href="#" class="nav-link" id="mobileLiguesLink"><i class="fas fa-trophy"></i> Mes Ligues</a></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- Popup pour les ligues -->
+<div class="popup" id="liguesPopup">
+    <div class="popup-content">
+        <div class="popup-icon"><i class="fas fa-exclamation-circle"></i></div>
+        <h2 class="popup-title">Fonctionnalité en cours de développement</h2>
+        <p class="popup-message">Les ligues ne sont pas disponibles pour le moment. Veuillez patienter.</p>
+        <button class="popup-button" id="closePopup">Fermer</button>
     </div>
-    
-    <!-- Contenu principal -->
-    <div class="main-container">
-        <h1 class="page-title">Tableau de Bord</h1>
-        
-        <!-- Deadline en haut -->
-        <section class="deadline-section">
-            <h2 class="deadline-title">
-                <i class="fas fa-clock"></i> Deadline Gameweek 1 - Saison 2025/2026
-            </h2>
-            <div class="deadline-timer" id="deadlineTimer">
-                <!-- Le timer sera mis à jour par JavaScript -->
-            </div>
-            <div class="deadline-date">
-                Prochain match: IRT vs HUSA - 12 Septembre 2025, 16:00
-            </div>
-        </section>
-        
-        <!-- Votre Performance -->
-        <section class="performance-section">
-            <div class="performance-card violet">
-                <div class="performance-label">Points Total</div>
-                <div class="performance-value points">0.0</div>
-                <div class="performance-change positive">+0.0 cette semaine</div>
-            </div>
-            <div class="performance-card violet-light">
-                <div class="performance-label">Valeur Équipe</div>
-                <div class="performance-value budget">100.0M</div>
-                <div class="performance-change">Budget restant: 100.0M MAD</div>
-            </div>
-            <div class="performance-card white">
-                <div class="performance-label">Ligues</div>
-                <div class="performance-value leagues">0</div>
-                <div class="performance-change">Aucune ligue rejointe</div>
-            </div>
-        </section>
-        
-        <!-- Prochaine Journée -->
-        <section class="next-match-section">
-            <div class="match-header">
-                <i class="fas fa-calendar-alt"></i> Prochaine Journée - GW1
-            </div>
-            <div class="match-info">
-                <div class="team-logo" style="background: #0000FF;">
-                    <i class="fas fa-circle"></i>
-                </div>
-                <div class="team-name">IRT</div>
-                <div class="vs">vs</div>
-                <div class="team-name">HUSA</div>
-                <div class="team-logo" style="background: #FF0000;">
-                    <i class="fas fa-circle"></i>
-                </div>
-            </div>
-            <div class="match-deadline" id="matchDeadline">
-                <!-- Le timer du match sera mis à jour par JavaScript -->
-            </div>
-            <div class="transfer-progress">
-                <div class="progress-bar"></div>
-            </div>
-            <div class="progress-text">0% des managers ont fait leurs transferts</div>
-        </section>
+</div>
+
+<!-- Contenu principal -->
+<div class="main-container">
+<h1 class="page-title">Tableau de Bord</h1>
+
+<!-- Deadline et performance -->
+<section class="deadline-section">
+    <h2 class="deadline-title"><i class="fas fa-clock"></i> Deadline Gameweek 1 - Saison 2025/2026</h2>
+    <div class="deadline-timer" id="deadlineTimer"></div>
+    <div class="deadline-date">Prochain match: IRT vs HUSA - 12 Septembre 2025, 16:00</div>
+</section>
+
+<section class="performance-section">
+    <div class="performance-card violet">
+        <div class="performance-label">Points Total</div>
+        <div class="performance-value points">0.0</div>
+        <div class="performance-change positive">+0.0 cette semaine</div>
     </div>
-    
-    <script>
-        // Dates pour le compte à rebours
-        const deadlineGW = new Date('2025-09-12T16:00:00'); // Deadline de la GW1 à 16h00
-        const matchDate = new Date('2025-09-12T16:00:00'); // Date du match IRT vs HUSA à 16h00
-        
-        // Fonction pour mettre à jour les compteurs
-        function updateCountdowns() {
-            const now = new Date();
-            
-            // Compte à rebours pour la deadline de la GW
-            const diffGW = deadlineGW - now;
-            if (diffGW > 0) {
-                const days = Math.floor(diffGW / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diffGW % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((diffGW % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((diffGW % (1000 * 60)) / 1000);
-                
-                document.getElementById('deadlineTimer').textContent = 
-                    `${days}j ${hours}h ${minutes}m ${seconds}s`;
-            } else {
-                document.getElementById('deadlineTimer').textContent = "Deadline passée!";
-            }
-            
-            // Compte à rebours pour le match
-            const diffMatch = matchDate - now;
-            if (diffMatch > 0) {
-                const days = Math.floor(diffMatch / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diffMatch % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((diffMatch % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((diffMatch % (1000 * 60)) / 1000);
-                
-                document.getElementById('matchDeadline').textContent = 
-                    `Début dans: ${days}j ${hours}h ${minutes}m ${seconds}s`;
-            } else {
-                document.getElementById('matchDeadline').textContent = "Match en cours ou terminé!";
-            }
-        }
-        
-        // Mise à jour initiale et ensuite toutes les secondes
-        updateCountdowns();
-        setInterval(updateCountdowns, 1000);
-        
-        // Gestion du menu mobile
-        const menuToggle = document.getElementById('menuToggle');
-        const closeMenu = document.getElementById('closeMenu');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const overlay = document.getElementById('overlay');
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        // Ouvrir le menu mobile
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-        
-        // Fermer le menu mobile
-        closeMenu.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-        
-        // Fermer le menu en cliquant sur l'overlay
-        overlay.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-        
-        // Fermer le menu quand un lien est cliqué
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.remove('active');
-                overlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-                // Retirer la classe active de tous les liens
-                navLinks.forEach(nav => {
-                    nav.classList.remove('active');
-                });
-                // Ajouter la classe active au lien cliqué
-                this.classList.add('active');
-            });
-        });
-        
-        // Gestion du popup pour les ligues
-        const liguesLink = document.getElementById('liguesLink');
-        const mobileLiguesLink = document.getElementById('mobileLiguesLink');
-        const liguesPopup = document.getElementById('liguesPopup');
-        const closePopup = document.getElementById('closePopup');
-        
-        // Ouvrir le popup
-        function openLiguesPopup(e) {
-            e.preventDefault();
-            liguesPopup.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        liguesLink.addEventListener('click', openLiguesPopup);
-        mobileLiguesLink.addEventListener('click', openLiguesPopup);
-        
-        // Fermer le popup
-        closePopup.addEventListener('click', () => {
-            liguesPopup.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-        
-        // Fermer le popup en cliquant en dehors du contenu
-        liguesPopup.addEventListener('click', (e) => {
-            if (e.target === liguesPopup) {
-                liguesPopup.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-        // --- MODIFICATION ICI : Gestion de la session sur toutes les pages ---
-document.addEventListener('DOMContentLoaded', function() {
-    checkUserSessionOnPageLoad();
-});
+    <div class="performance-card violet-light">
+        <div class="performance-label">Valeur Équipe</div>
+        <div class="performance-value budget">100.0M</div>
+        <div class="performance-change">Budget restant: 100.0M MAD</div>
+    </div>
+    <div class="performance-card white">
+        <div class="performance-label">Ligues</div>
+        <div class="performance-value leagues">0</div>
+        <div class="performance-change">Aucune ligue rejointe</div>
+    </div>
+</section>
 
-function checkUserSessionOnPageLoad() {
-    const userData = localStorage.getItem('fantasyUser');
-    if (userData) {
-        try {
-            const user = JSON.parse(userData);
-            displayUserProfile(user); // Cette fonction doit exister sur chaque page
-        } catch (e) {
-            console.error("Erreur lors du parsing des données utilisateur:", e);
-            localStorage.removeItem('fantasyUser');
-             // Rediriger vers la page d'accueil si les données sont corrompues
-             if (window.location.pathname !== '/index.html' && !window.location.pathname.endsWith('/index.html')) {
-                 window.location.href = 'index.html';
-             }
-        }
-    } else {
-         // Si l'utilisateur n'est pas connecté, rediriger vers la page d'accueil
-         // Sauf s'il est déjà sur la page d'accueil
-         if (window.location.pathname !== '/index.html' && !window.location.pathname.endsWith('/index.html')) {
-             window.location.href = 'index.html';
-         }
-    }
-}
+<section class="next-match-section">
+    <div class="match-header"><i class="fas fa-calendar-alt"></i> Prochaine Journée - GW1</div>
+    <div class="match-info">
+        <div class="team-logo" style="background: #0000FF;"><i class="fas fa-circle"></i></div>
+        <div class="team-name">IRT</div>
+        <div class="vs">vs</div>
+        <div class="team-name">HUSA</div>
+        <div class="team-logo" style="background: #FF0000;"><i class="fas fa-circle"></i></div>
+    </div>
+    <div class="match-deadline" id="matchDeadline"></div>
+    <div class="transfer-progress"><div class="progress-bar"></div></div>
+    <div class="progress-text">0% des managers ont fait leurs transferts</div>
+</section>
+</div>
 
-// Fonction pour afficher le profil utilisateur (doit être présente sur chaque page)
-function displayUserProfile(user) {
-    const userProfile = document.getElementById('userProfile');
-    if (userProfile) { // Vérifier que l'élément existe sur la page
-        userProfile.innerHTML = `
-            <div class="user-info">
-                <img src="${user.picture}" alt="${user.name}" class="user-avatar">
-                <span class="user-name">${user.name}</span>
-            </div>
-            <button class="logout-btn" id="logoutBtn">Déconnexion</button>
-        `;
-        // Ajouter l'événement de déconnexion
-        const logoutBtn = document.getElementById('logoutBtn');
-        if (logoutBtn) {
-            logoutBtn.addEventListener('click', logout);
-        }
-    }
-}
+<script>
+// --- Gestion de la connexion ---
+const currentUser = localStorage.getItem('currentUser');
+if(!currentUser) { window.location.href = 'login.html'; }
+const userData = JSON.parse(localStorage.getItem('user_'+currentUser));
 
-// Fonction de déconnexion (doit être présente sur chaque page)
-function logout() {
-    localStorage.removeItem('fantasyUser'); // Supprimer les données utilisateur
-    // Masquer le profil utilisateur
-    const userProfile = document.getElementById('userProfile');
-    if (userProfile) {
-        userProfile.innerHTML = '';
-    }
-    // Rediriger vers la page d'accueil
-    window.location.href = 'index.html';
+// Mettre à jour infos utilisateur
+document.querySelector('.user-name').textContent = currentUser;
+document.querySelector('.performance-value.points').textContent = userData.points.toFixed(1);
+document.querySelector('.performance-value.budget').textContent = userData.budget.toFixed(1) + 'M';
+
+// --- Compte à rebours ---
+const deadlineGW = new Date('2025-09-12T16:00:00');
+const matchDate = new Date('2025-09-12T16:00:00');
+
+function updateCountdowns() {
+    const now = new Date();
+    const diffGW = deadlineGW - now;
+    document.getElementById('deadlineTimer').textContent = diffGW>0?
+        `${Math.floor(diffGW/86400000)}j ${Math.floor((diffGW%86400000)/3600000)}h ${Math.floor((diffGW%3600000)/60000)}m ${Math.floor((diffGW%60000)/1000)}s`
+        : "Deadline passée!";
+    const diffMatch = matchDate - now;
+    document.getElementById('matchDeadline').textContent = diffMatch>0?
+        `Début dans: ${Math.floor(diffMatch/86400000)}j ${Math.floor((diffMatch%86400000)/3600000)}h ${Math.floor((diffMatch%3600000)/60000)}m ${Math.floor((diffMatch%60000)/1000)}s`
+        : "Match en cours ou terminé!";
 }
-// --- FIN DE LA MODIFICATION ---
-    </script>
+updateCountdowns(); setInterval(updateCountdowns,1000);
+
+// --- Menu mobile ---
+const menuToggle = document.getElementById('menuToggle');
+const closeMenu = document.getElementById('closeMenu');
+const mobileMenu = document.getElementById('mobileMenu');
+const overlay = document.getElementById('overlay');
+menuToggle.addEventListener('click',()=>{mobileMenu.classList.add('active'); overlay.classList.add('active'); document.body.style.overflow='hidden';});
+closeMenu.addEventListener('click',()=>{mobileMenu.classList.remove('active'); overlay.classList.remove('active'); document.body.style.overflow='auto';});
+overlay.addEventListener('click',()=>{mobileMenu.classList.remove('active'); overlay.classList.remove('active'); document.body.style.overflow='auto';});
+
+// --- Popup ligues ---
+const liguesLink = document.getElementById('liguesLink');
+const mobileLiguesLink = document.getElementById('mobileLiguesLink');
+const liguesPopup = document.getElementById('liguesPopup');
+const closePopup = document.getElementById('closePopup');
+function openLiguesPopup(e){e.preventDefault(); liguesPopup.classList.add('active'); document.body.style.overflow='hidden';}
+liguesLink.addEventListener('click', openLiguesPopup);
+mobileLiguesLink.addEventListener('click', openLiguesPopup);
+closePopup.addEventListener('click', ()=>{liguesPopup.classList.remove('active'); document.body.style.overflow='auto';});
+liguesPopup.addEventListener('click',(e)=>{if(e.target===liguesPopup){liguesPopup.classList.remove('active'); document.body.style.overflow='auto';}});
+</script>
+
 </body>
-
 </html>
