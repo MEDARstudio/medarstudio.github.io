@@ -1099,20 +1099,21 @@
 
         // Fonction de gestion de la réponse Google Sign-In
         function handleCredentialResponse(response) {
-            // Décoder le jeton JWT pour obtenir les informations utilisateur
-            const responsePayload = parseJwt(response.credential);
-            // Afficher les informations utilisateur
-            displayUserProfile(responsePayload);
-            // Masquer le conteneur de connexion Google
-            document.getElementById('googleSignInContainer').style.display = 'none';
-            // Afficher un message de bienvenue
-            alert(`Bienvenue, ${responsePayload.name}! Vous êtes maintenant connecté.`);
-            // Ici, vous pouvez envoyer le jeton à votre serveur pour vérification
-            // et créer/mettre à jour le compte utilisateur dans votre base de données
-            console.log("Jeton d'identification: " + response.credential);
-            // Rediriger vers la page de sélection des joueurs (à adapter selon votre structure)
-            // window.location.href = 'equipe.html';
-        }
+    const responsePayload = parseJwt(response.credential);
+    if (responsePayload) {
+        // --- MODIFICATION ICI : Sauvegarder dans localStorage ---
+        localStorage.setItem('fantasyUser', JSON.stringify(responsePayload));
+        // --- FIN DE LA MODIFICATION ---
+        displayUserProfile(responsePayload);
+        document.getElementById('googleSignInContainer').style.display = 'none';
+        alert(`Bienvenue, ${responsePayload.name}! Vous êtes maintenant connecté.`);
+        console.log("Jeton d'identification: " + response.credential);
+        // window.location.href = 'equipe.html'; // Redirection commentée
+    } else {
+        console.error("Impossible de décoder le jeton JWT");
+        alert("Erreur lors de la connexion. Veuillez réessayer.");
+    }
+}
 
         // Fonction pour décoder le jeton JWT
         function parseJwt(token) {
@@ -1213,7 +1214,65 @@
             }
             // Vous pouvez aussi initialiser d'autres éléments ici si nécessaire
         };
+        // --- MODIFICATION ICI : Gestion de la session sur toutes les pages ---
+document.addEventListener('DOMContentLoaded', function() {
+    checkUserSessionOnPageLoad();
+});
+
+function checkUserSessionOnPageLoad() {
+    const userData = localStorage.getItem('fantasyUser');
+    if (userData) {
+        try {
+            const user = JSON.parse(userData);
+            displayUserProfile(user); // Cette fonction doit exister sur chaque page
+        } catch (e) {
+            console.error("Erreur lors du parsing des données utilisateur:", e);
+            localStorage.removeItem('fantasyUser');
+             // Rediriger vers la page d'accueil si les données sont corrompues
+             if (window.location.pathname !== '/index.html' && !window.location.pathname.endsWith('/index.html')) {
+                 window.location.href = 'index.html';
+             }
+        }
+    } else {
+         // Si l'utilisateur n'est pas connecté, rediriger vers la page d'accueil
+         // Sauf s'il est déjà sur la page d'accueil
+         if (window.location.pathname !== '/index.html' && !window.location.pathname.endsWith('/index.html')) {
+             window.location.href = 'index.html';
+         }
+    }
+}
+
+// Fonction pour afficher le profil utilisateur (doit être présente sur chaque page)
+function displayUserProfile(user) {
+    const userProfile = document.getElementById('userProfile');
+    if (userProfile) { // Vérifier que l'élément existe sur la page
+        userProfile.innerHTML = `
+            <div class="user-info">
+                <img src="${user.picture}" alt="${user.name}" class="user-avatar">
+                <span class="user-name">${user.name}</span>
+            </div>
+            <button class="logout-btn" id="logoutBtn">Déconnexion</button>
+        `;
+        // Ajouter l'événement de déconnexion
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', logout);
+        }
+    }
+}
+
+// Fonction de déconnexion (doit être présente sur chaque page)
+function logout() {
+    localStorage.removeItem('fantasyUser'); // Supprimer les données utilisateur
+    // Masquer le profil utilisateur
+    const userProfile = document.getElementById('userProfile');
+    if (userProfile) {
+        userProfile.innerHTML = '';
+    }
+    // Rediriger vers la page d'accueil
+    window.location.href = 'index.html';
+}
+// --- FIN DE LA MODIFICATION ---
     </script>
 </body>
 </html>
-
