@@ -13,7 +13,6 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         :root {
             --primary: #6A0DAD; /* Violet foncé */
             --secondary: #9370DB; /* Violet moyen */
@@ -25,14 +24,12 @@
             --card-bg: rgba(106, 13, 173, 0.1);
             --hover-bg: rgba(186, 85, 211, 0.15);
         }
-
         body {
             background: linear-gradient(135deg, var(--dark-bg) 0%, #2d0052 100%);
             color: var(--light);
             min-height: 100vh;
             overflow-x: hidden;
         }
-
         /* En-tête */
         header {
             background: rgba(0, 0, 0, 0.7);
@@ -46,13 +43,11 @@
             z-index: 100;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
-
         .logo {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-
         .logo-icon {
             background: var(--primary);
             width: 50px;
@@ -63,22 +58,18 @@
             justify-content: center;
             font-size: 1.5rem;
         }
-
         .logo-text {
             font-size: 1.8rem;
             font-weight: 700;
         }
-
         .logo-text span {
             color: var(--accent);
         }
-
         nav ul {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
-
         nav a {
             color: var(--light);
             text-decoration: none;
@@ -90,31 +81,26 @@
             align-items: center;
             gap: 8px;
         }
-
         nav a:hover {
             color: var(--accent);
             background: var(--hover-bg);
             transform: translateY(-2px);
         }
-
         nav a.active {
             color: var(--accent);
             background: var(--hover-bg);
         }
-
         /* Profil utilisateur */
         .user-profile {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-
         .user-info {
             display: flex;
             align-items: center;
             gap: 10px;
         }
-
         .user-avatar {
             width: 40px;
             height: 40px;
@@ -122,7 +108,6 @@
             object-fit: cover;
             border: 2px solid var(--accent);
         }
-
         .user-name {
             font-weight: 500;
             max-width: 150px;
@@ -130,8 +115,7 @@
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-
-        .logout-btn {
+        .logout-btn, .team-btn {
             background: none;
             border: 1px solid var(--accent);
             color: var(--accent);
@@ -140,13 +124,14 @@
             cursor: pointer;
             font-size: 0.9rem;
             transition: all 0.3s ease;
+            text-decoration: none; /* Pour le lien */
+            display: inline-block; /* Pour le lien */
+            text-align: center; /* Pour le lien */
         }
-
-        .logout-btn:hover {
+        .logout-btn:hover, .team-btn:hover {
             background: var(--accent);
             color: var(--dark);
         }
-
         /* Toggle menu mobile */
         .menu-toggle {
             display: none;
@@ -159,11 +144,9 @@
             border-radius: 5px;
             transition: all 0.3s ease;
         }
-
         .menu-toggle:hover {
             background: var(--hover-bg);
         }
-
         /* Sections */
         section {
             min-height: 100vh;
@@ -171,7 +154,6 @@
             display: flex;
             align-items: center;
         }
-
         /* Section Hero */
         .hero {
             text-align: center;
@@ -180,18 +162,15 @@
             flex-direction: column;
             justify-content: center;
         }
-
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
-
         .hero h1 span {
             color: var(--accent);
             display: block;
         }
-
         .hero p {
             font-size: 1.3rem;
             max-width: 700px;
@@ -199,7 +178,6 @@
             color: #e0e0e0;
             line-height: 1.6;
         }
-
         .cta-button {
             background: var(--primary);
             color: white;
@@ -217,23 +195,19 @@
             margin: 0.5rem;
             border: 2px solid var(--accent);
         }
-
         .cta-button:hover {
             background: var(--accent);
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(186, 85, 211, 0.6);
         }
-
         .cta-button.secondary {
             background: transparent;
             border: 2px solid var(--accent);
             color: var(--accent);
         }
-
         .cta-button.secondary:hover {
             background: var(--hover-bg);
         }
-
         .hero-buttons {
             display: flex;
             justify-content: center;
@@ -241,25 +215,21 @@
             gap: 1rem;
             margin-top: 2rem;
         }
-
         /* Section de connexion masquée */
         #googleSignInContainer {
             display: none;
             margin-top: 2rem;
         }
-
         /* Règles du jeu */
         .rules-section {
             background: rgba(0, 0, 0, 0.2);
         }
-
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
             position: relative;
         }
-
         .section-title::after {
             content: '';
             display: block;
@@ -269,19 +239,16 @@
             margin: 15px auto;
             border-radius: 2px;
         }
-
         .rules-container {
             max-width: 1200px;
             margin: 0 auto;
             width: 100%;
         }
-
         .rules-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
-
         .rule-card {
             background: var(--card-bg);
             border-radius: 15px;
@@ -291,14 +258,12 @@
             position: relative;
             overflow: hidden;
         }
-
         .rule-card:hover {
             transform: translateY(-10px);
             background: rgba(106, 13, 173, 0.2);
             box-shadow: 0 10px 25px rgba(106, 13, 173, 0.3);
             border: 1px solid var(--accent);
         }
-
         .rule-card::before {
             content: '';
             position: absolute;
@@ -308,14 +273,12 @@
             height: 100%;
             background: var(--primary);
         }
-
         .rule-header {
             display: flex;
             align-items: center;
             gap: 15px;
             margin-bottom: 1.5rem;
         }
-
         .rule-icon {
             font-size: 2rem;
             color: var(--accent);
@@ -327,26 +290,21 @@
             align-items: center;
             justify-content: center;
         }
-
         .rule-title {
             font-size: 1.5rem;
             font-weight: 600;
         }
-
         .rule-content ul {
             padding-left: 1.5rem;
         }
-
         .rule-content li {
             margin-bottom: 0.8rem;
             line-height: 1.6;
         }
-
         .highlight {
             color: var(--accent);
             font-weight: 600;
         }
-
         /* Fonctionnalités - Centrées */
         .features-centered {
             background: rgba(0, 0, 0, 0.15);
@@ -354,11 +312,9 @@
             flex-direction: column;
             justify-content: center;
         }
-
         .features-centered .section-title {
             margin-bottom: 2rem;
         }
-
         .features-centered p {
             font-size: 1.2rem;
             max-width: 800px;
@@ -366,7 +322,6 @@
             color: #e0e0e0;
             line-height: 1.6;
         }
-
         .features-options {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -375,7 +330,6 @@
             margin: 0 auto;
             width: 100%;
         }
-
         .feature-option {
             background: var(--card-bg);
             border-radius: 15px;
@@ -384,31 +338,26 @@
             transition: all 0.3s ease;
             border: 1px solid rgba(186, 85, 211, 0.2);
         }
-
         .feature-option:hover {
             transform: translateY(-10px);
             background: rgba(106, 13, 173, 0.2);
             box-shadow: 0 10px 25px rgba(106, 13, 173, 0.3);
             border: 1px solid var(--accent);
         }
-
         .feature-option-icon {
             font-size: 3rem;
             color: var(--accent);
             margin-bottom: 1.5rem;
         }
-
         .feature-option h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
-
         .feature-option p {
             color: #d0d0d0;
             line-height: 1.6;
             margin-bottom: 1.5rem;
         }
-
         .feature-option-link {
             display: inline-block;
             color: var(--accent);
@@ -419,28 +368,23 @@
             border-radius: 50px;
             transition: all 0.3s ease;
         }
-
         .feature-option-link:hover {
             background: var(--accent);
             color: var(--light);
         }
-
         /* Classements */
         .rankings {
             background: rgba(0, 0, 0, 0.2);
         }
-
         .rankings-content {
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
         }
-
         .rankings-content h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
         }
-
         .rankings-content p {
             font-size: 1.2rem;
             max-width: 800px;
@@ -448,23 +392,19 @@
             color: #e0e0e0;
             line-height: 1.6;
         }
-
         /* Transferts */
         .transfers {
             background: rgba(0, 0, 0, 0.15);
         }
-
         .transfers-content {
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
         }
-
         .transfers-content h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
         }
-
         .transfers-content p {
             font-size: 1.2rem;
             max-width: 800px;
@@ -472,7 +412,6 @@
             color: #e0e0e0;
             line-height: 1.6;
         }
-
         /* Footer */
         footer {
             background: rgba(0, 0, 0, 0.8);
@@ -480,29 +419,24 @@
             text-align: center;
             border-top: 1px solid rgba(186, 85, 211, 0.2);
         }
-
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
         }
-
         .footer-logo {
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
         }
-
         .footer-logo span {
             color: var(--accent);
         }
-
         .social-links {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
             margin: 2rem 0;
         }
-
         .social-links a {
             color: var(--light);
             font-size: 1.5rem;
@@ -515,19 +449,16 @@
             border-radius: 50%;
             background: rgba(106, 13, 173, 0.2);
         }
-
         .social-links a:hover {
             color: var(--accent);
             background: rgba(186, 85, 211, 0.2);
             transform: translateY(-5px);
         }
-
         .copyright {
             color: var(--gray);
             margin-top: 2rem;
             font-size: 0.9rem;
         }
-
         /* Menu mobile */
         .mobile-menu {
             position: fixed;
@@ -542,11 +473,9 @@
             padding: 2rem;
             box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
         }
-
         .mobile-menu.active {
             right: 0;
         }
-
         .mobile-menu-header {
             display: flex;
             justify-content: space-between;
@@ -555,7 +484,6 @@
             padding-bottom: 1rem;
             border-bottom: 1px solid rgba(186, 85, 211, 0.3);
         }
-
         .close-menu {
             background: none;
             border: none;
@@ -566,18 +494,15 @@
             border-radius: 5px;
             transition: all 0.3s ease;
         }
-
         .close-menu:hover {
             background: var(--hover-bg);
         }
-
         .mobile-nav ul {
             display: flex;
             flex-direction: column;
             list-style: none;
             gap: 1.5rem;
         }
-
         .mobile-nav a {
             color: var(--light);
             text-decoration: none;
@@ -590,12 +515,10 @@
             gap: 15px;
             transition: all 0.3s ease;
         }
-
         .mobile-nav a:hover, .mobile-nav a.active {
             color: var(--accent);
             background: var(--hover-bg);
         }
-
         .overlay {
             position: fixed;
             top: 0;
@@ -609,145 +532,114 @@
             visibility: hidden;
             transition: all 0.3s ease;
         }
-
         .overlay.active {
             opacity: 1;
             visibility: visible;
         }
-
         /* Responsive */
         @media (max-width: 992px) {
             .hero h1 {
                 font-size: 3rem;
             }
-            
             .hero p {
                 font-size: 1.2rem;
             }
-            
             .section-title {
                 font-size: 2.2rem;
             }
         }
-
         @media (max-width: 768px) {
             header {
                 padding: 1rem;
             }
-            
             .logo-text {
                 font-size: 1.5rem;
             }
-            
             .logo-icon {
                 width: 40px;
                 height: 40px;
                 font-size: 1.2rem;
             }
-            
             nav ul {
                 display: none;
             }
-            
             .menu-toggle {
                 display: block;
             }
-            
             .user-profile {
-                display: none;
+                display: none; /* Masqué sur mobile pour simplifier */
             }
-            
             .hero {
                 padding: 3rem 1rem;
             }
-            
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
             .hero p {
                 font-size: 1.1rem;
             }
-            
             .section-title {
                 font-size: 2rem;
             }
-            
             section {
                 padding: 3rem 1rem;
             }
-            
             .rules-grid, .features-options {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
-            
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
                 gap: 0.8rem;
             }
-            
             .cta-button {
                 width: 100%;
                 max-width: 300px;
                 justify-content: center;
             }
-            
             .rule-card, .feature-option {
                 padding: 1.5rem;
             }
-            
             .rule-header {
                 margin-bottom: 1rem;
             }
-            
             .rule-icon {
                 width: 45px;
                 height: 45px;
                 font-size: 1.7rem;
             }
-            
             .rule-title {
                 font-size: 1.3rem;
             }
-            
             .feature-option-icon {
                 font-size: 2.5rem;
             }
-            
             .feature-option h3 {
                 font-size: 1.3rem;
             }
         }
-
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 2rem;
             }
-            
             .section-title {
                 font-size: 1.8rem;
             }
-            
             .section-title::after {
                 width: 80px;
             }
-            
             .rule-card, .feature-option {
                 padding: 1.3rem;
             }
-            
             .social-links {
                 gap: 1rem;
             }
-            
             .social-links a {
                 width: 45px;
                 height: 45px;
                 font-size: 1.3rem;
             }
-            
             .mobile-menu {
                 width: 90%;
             }
@@ -779,7 +671,6 @@
             <i class="fas fa-bars"></i>
         </button>
     </header>
-
     <!-- Menu mobile -->
     <div class="overlay" id="overlay"></div>
     <div class="mobile-menu" id="mobileMenu">
@@ -804,7 +695,6 @@
             </ul>
         </nav>
     </div>
-
     <!-- Section Hero -->
     <section class="hero" id="hero">
         <h1>Gérez votre équipe idéale <span>de la Botola Pro Inwi</span></h1>
@@ -819,7 +709,6 @@
                 Voir les règles du jeu
             </button>
         </div>
-        
         <!-- Conteneur de connexion Google masqué -->
         <div id="googleSignInContainer">
             <div id="g_id_onload"
@@ -837,7 +726,6 @@
             </div>
         </div>
     </section>
-
     <!-- Règles du jeu -->
     <section class="rules-section" id="rules">
         <div class="rules-container">
@@ -858,7 +746,6 @@
                         </ul>
                     </div>
                 </div>
-                
                 <div class="rule-card">
                     <div class="rule-header">
                         <div class="rule-icon">
@@ -874,7 +761,6 @@
                         </ul>
                     </div>
                 </div>
-                
                 <div class="rule-card">
                     <div class="rule-header">
                         <div class="rule-icon">
@@ -890,7 +776,6 @@
                         </ul>
                     </div>
                 </div>
-                
                 <div class="rule-card">
                     <div class="rule-header">
                         <div class="rule-icon">
@@ -907,7 +792,6 @@
                         </ul>
                     </div>
                 </div>
-                
                 <div class="rule-card">
                     <div class="rule-header">
                         <div class="rule-icon">
@@ -924,7 +808,6 @@
                         </ul>
                     </div>
                 </div>
-                
                 <div class="rule-card">
                     <div class="rule-header">
                         <div class="rule-icon">
@@ -943,12 +826,10 @@
             </div>
         </div>
     </section>
-
     <!-- Fonctionnalités Centrées -->
     <section class="features-centered" id="features">
         <h2 class="section-title">Fonctionnalités Principales</h2>
         <p>Découvrez les fonctionnalités clés de Fantasy Botola Pro Inwi qui vous permettront de créer la meilleure équipe et de rivaliser avec vos amis.</p>
-        
         <div class="features-options">
             <div class="feature-option">
                 <div class="feature-option-icon">
@@ -958,7 +839,6 @@
                 <p>Constituez votre équipe idéale avec un budget limité et gérez vos transferts chaque semaine.</p>
                 <a href="#transfers" class="feature-option-link nav-link">En savoir plus</a>
             </div>
-            
             <div class="feature-option">
                 <div class="feature-option-icon">
                     <i class="fas fa-trophy"></i>
@@ -967,7 +847,6 @@
                 <p>Classement global et ligues privées pour rivaliser avec vos amis et la communauté.</p>
                 <a href="#rankings" class="feature-option-link nav-link">En savoir plus</a>
             </div>
-            
             <div class="feature-option">
                 <div class="feature-option-icon">
                     <i class="fas fa-chart-line"></i>
@@ -978,7 +857,6 @@
             </div>
         </div>
     </section>
-
     <!-- Classements -->
     <section class="rankings" id="rankings">
         <div class="rankings-content">
@@ -1009,7 +887,6 @@
             </div>
         </div>
     </section>
-
     <!-- Transferts -->
     <section class="transfers" id="transfers">
         <div class="transfers-content">
@@ -1040,31 +917,27 @@
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-logo">Fantasy <span>Botola Pro</span> Inwi</div>
             <p>La plateforme officielle de fantasy football pour la Botola Pro Inwi 2025/2026</p>
-            
             <div class="social-links">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
-            
             <div class="copyright">
                 &copy; 2025 Fantasy Botola Pro Inwi. Tous droits réservés.
             </div>
         </div>
     </footer>
-
     <script>
         // Configuration de Google Sign-In
         // Remplacez "VOTRE_ID_CLIENT_GOOGLE" par votre vrai ID Client
         const GOOGLE_CLIENT_ID = "514757877097-ke0d5ovl55vbprlc4smkg0t5oudep0v0.apps.googleusercontent.com";
-        
+
         // Gestion du menu mobile
         const menuToggle = document.getElementById('menuToggle');
         const closeMenu = document.getElementById('closeMenu');
@@ -1093,29 +966,26 @@
             document.body.style.overflow = 'auto';
         });
 
-        // Fermer le menu quand un lien est cliqué
+        // Fermer le menu quand un lien est cliqué (correction de la portée de 'this')
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', function(e) { // Utiliser 'function' pour avoir 'this'
+                e.preventDefault();
                 mobileMenu.classList.remove('active');
                 overlay.classList.remove('active');
                 document.body.style.overflow = 'auto';
-                
                 // Retirer la classe active de tous les liens
                 navLinks.forEach(nav => {
                     nav.classList.remove('active');
                 });
-                
                 // Ajouter la classe active au lien cliqué
-                this.classList.add('active');
-                
+                this.classList.add('active'); // 'this' fait référence au lien cliqué
                 // Obtenir l'ID de la section cible
                 const targetId = this.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
-                
                 // Faire défiler vers la section cible
                 if (targetSection) {
-                    targetSection.scrollIntoView({ 
-                        behavior: 'smooth' 
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth'
                     });
                 }
             });
@@ -1123,25 +993,21 @@
 
         // Gestion des transitions de glissement pour les liens de navigation desktop
         document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', function(e) {
+            link.addEventListener('click', function(e) { // Utiliser 'function' pour avoir 'this'
                 e.preventDefault();
-                
                 // Retirer la classe active de tous les liens
                 document.querySelectorAll('nav a').forEach(nav => {
                     nav.classList.remove('active');
                 });
-                
                 // Ajouter la classe active au lien cliqué
-                this.classList.add('active');
-                
+                this.classList.add('active'); // 'this' fait référence au lien cliqué
                 // Obtenir l'ID de la section cible
                 const targetId = this.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
-                
                 // Faire défiler vers la section cible
                 if (targetSection) {
-                    targetSection.scrollIntoView({ 
-                        behavior: 'smooth' 
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth'
                     });
                 }
             });
@@ -1151,10 +1017,9 @@
         document.getElementById('rulesBtn').addEventListener('click', function(e) {
             e.preventDefault();
             document.querySelector('nav a[href="#rules"]').classList.add('active');
-            document.querySelector('#rules').scrollIntoView({ 
-                behavior: 'smooth' 
+            document.querySelector('#rules').scrollIntoView({
+                behavior: 'smooth'
             });
-            
             // Pour mobile
             if (window.innerWidth <= 768) {
                 mobileMenu.classList.remove('active');
@@ -1168,12 +1033,10 @@
             // Afficher le conteneur de connexion Google
             const signInContainer = document.getElementById('googleSignInContainer');
             signInContainer.style.display = 'block';
-            
             // Faire défiler vers le conteneur de connexion
-            signInContainer.scrollIntoView({ 
-                behavior: 'smooth' 
+            signInContainer.scrollIntoView({
+                behavior: 'smooth'
             });
-            
             // Initialiser Google Sign-In si ce n'est pas déjà fait
             initializeGoogleSignIn();
         });
@@ -1181,17 +1044,14 @@
         // Mise à jour de l'état actif du menu lors du défilement
         window.addEventListener('scroll', function() {
             let current = '';
-            
             // Déterminer quelle section est actuellement visible
             document.querySelectorAll('section').forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                
                 if (pageYOffset >= (sectionTop - 200)) {
                     current = section.getAttribute('id');
                 }
             });
-            
             // Mettre à jour l'état actif du menu desktop
             document.querySelectorAll('nav a').forEach(link => {
                 link.classList.remove('active');
@@ -1199,7 +1059,6 @@
                     link.classList.add('active');
                 }
             });
-            
             // Mettre à jour l'état actif du menu mobile
             document.querySelectorAll('.mobile-nav a').forEach(link => {
                 link.classList.remove('active');
@@ -1213,20 +1072,15 @@
         function handleCredentialResponse(response) {
             // Décoder le jeton JWT pour obtenir les informations utilisateur
             const responsePayload = parseJwt(response.credential);
-            
             // Afficher les informations utilisateur
             displayUserProfile(responsePayload);
-            
             // Masquer le conteneur de connexion Google
             document.getElementById('googleSignInContainer').style.display = 'none';
-            
             // Afficher un message de bienvenue
             alert(`Bienvenue, ${responsePayload.name}! Vous êtes maintenant connecté.`);
-            
             // Ici, vous pouvez envoyer le jeton à votre serveur pour vérification
             // et créer/mettre à jour le compte utilisateur dans votre base de données
             console.log("Jeton d'identification: " + response.credential);
-            
             // Rediriger vers la page de sélection des joueurs (à adapter selon votre structure)
             // window.location.href = 'selection.html';
         }
@@ -1239,14 +1093,13 @@
                 const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
                     return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
                 }).join(''));
-                
                 return JSON.parse(jsonPayload);
             } catch (e) {
                 return null;
             }
         }
 
-        // Fonction pour afficher le profil utilisateur
+        // Fonction pour afficher le profil utilisateur avec le bouton "Sélection Équipe"
         function displayUserProfile(user) {
             const userProfile = document.getElementById('userProfile');
             userProfile.innerHTML = `
@@ -1254,9 +1107,14 @@
                     <img src="${user.picture}" alt="${user.name}" class="user-avatar">
                     <span class="user-name">${user.name}</span>
                 </div>
+                <!-- Bouton pour aller à la sélection d'équipe -->
+                <a href="selection-equipe.html" class="team-btn">
+                    <i class="fas fa-user-friends"></i> Équipe
+                </a>
                 <button class="logout-btn" id="logoutBtn">Déconnexion</button>
             `;
-            
+            // Masquer le bouton "Commencer maintenant"
+            document.getElementById('startBtn').style.display = 'none';
             // Ajouter l'événement de déconnexion
             document.getElementById('logoutBtn').addEventListener('click', logout);
         }
@@ -1265,10 +1123,16 @@
         function logout() {
             // Masquer le profil utilisateur
             document.getElementById('userProfile').innerHTML = '';
-            
             // Réafficher le bouton "Commencer maintenant"
-            document.getElementById('startBtn').style.display = 'inline-flex';
-            
+            const startBtn = document.getElementById('startBtn');
+            if (startBtn) {
+                startBtn.style.display = 'inline-flex'; // Ou 'block', selon votre style initial
+            }
+             // Masquer à nouveau le conteneur de connexion Google si nécessaire
+            const signInContainer = document.getElementById('googleSignInContainer');
+            if (signInContainer) {
+                 signInContainer.style.display = 'none';
+            }
             alert('Vous avez été déconnecté avec succès.');
         }
 
@@ -1279,7 +1143,6 @@
                     client_id: GOOGLE_CLIENT_ID,
                     callback: handleCredentialResponse
                 });
-                
                 // Rendu du bouton Google Sign-In
                 google.accounts.id.renderButton(
                     document.querySelector(".g_id_signin"),
@@ -1287,13 +1150,16 @@
                 );
             } else {
                 console.error("Google Identity Services n'est pas chargé");
+                // Réessayer après un court délai
+                setTimeout(initializeGoogleSignIn, 500);
             }
         }
 
         // Initialisation au chargement de la page
         window.onload = function() {
-            // Masquer le bouton "Commencer maintenant" si l'utilisateur est déjà connecté
-            // (vous pouvez implémenter cette logique selon votre système de session)
+            // Vous pouvez vérifier ici si l'utilisateur est déjà connecté (via localStorage, etc.)
+            // et appeler displayUserProfile si c'est le cas.
+            // Pour l'instant, on part du principe qu'il n'est pas connecté au chargement initial.
         };
     </script>
 </body>
