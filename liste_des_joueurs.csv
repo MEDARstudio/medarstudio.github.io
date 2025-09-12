@@ -1,0 +1,447 @@
+id;name;club;position;price;points;performance
+1;Reda Slim;AS FAR;ATT;5;0;0
+2;Mohssine Bourika;AS FAR;ATT;5;0;0
+3;Hamza Khabba;AS FAR;ATT;5;0;0
+4;Achref Habbassi;AS FAR;ATT;5;0;0
+5;Mohamed Rabie Hrimat;AS FAR;MID;5;0;0
+6;Khalid Ait Ouarkhane;AS FAR;MID;5;0;0
+7;Ahmed Hammoudan;AS FAR;MID;5;0;0
+8;Youssef El Fahli;AS FAR;MID;5;0;0
+9;Abdelfettah Hadraf;AS FAR;MID;5;0;0
+10;Zinedine Derrag;AS FAR;MID;5;0;0
+11;Soulaimane El Bouchqali;AS FAR;MID;5;0;0
+12;Zakaria Ajoughlal;AS FAR;MID;5;0;0
+13;Taoufik Razko;AS FAR;MID;5;0;0
+14;Achraf Missou;AS FAR;MID;5;0;0
+15;Yunis Abdelhamid;AS FAR;DEF;5;0;0
+16;Marouane Louadni;AS FAR;DEF;5;0;0
+17;Anas Bach;AS FAR;DEF;5;0;0
+18;Tó Carneiro;AS FAR;DEF;5;0;0
+19;Nouh Mohamed El Abd;AS FAR;DEF;5;0;0
+20;Jamal Ech-Chammakh;AS FAR;DEF;5;0;0
+21;Mouad Bougaizane;AS FAR;DEF;5;0;0
+22;Fallou Formose Mendy;AS FAR;DEF;5;0;0
+23;Mohammed Kebdani;AS FAR;DEF;5;0;0
+24;Ayoub Ait Khassou;AS FAR;DEF;5;0;0
+25;Ahmed Reda Tagnaouti;AS FAR;GK;5;0;0
+26;Ayoub El Khayati;AS FAR;GK;5;0;0
+27;Hakim Mesbahi;AS FAR;GK;5;0;0
+28;Zouhir Eddib;CODM;ATT;5;0;0
+29;Imad Khannouss;CODM;ATT;5;0;0
+30;Abdellatif Benkassou;CODM;ATT;5;0;0
+31;Yassine Senhaji;CODM;ATT;5;0;0
+32;Mustapha Sahd;CODM;ATT;5;0;0
+33;Cruz Ndong Biteghe;CODM;ATT;5;0;0
+34;Ismael Benktib;CODM;MID;5;0;0
+35;Larbi Naji;CODM;MID;5;0;0
+36;Mouad Goulouss;CODM;MID;5;0;0
+37;Mohamed Gharmal;CODM;MID;5;0;0
+38;Youssef Anouar;CODM;MID;5;0;0
+39;Adnane Berdad;CODM;MID;5;0;0
+40;Younes Sakhi;CODM;MID;5;0;0
+41;Achraf Hmaidou;CODM;MID;5;0;0
+42;Amine Dghoughi;CODM;MID;5;0;0
+43;Mohamed Zinaf;CODM;MID;5;0;0
+44;Zakaria Nassik;CODM;DEF;5;0;0
+45;Yassine Jbira;CODM;DEF;5;0;0
+46;Youssef Limouri;CODM;DEF;5;0;0
+47;Oussama Daoui;CODM;DEF;5;0;0
+48;Driss El Abdi;CODM;DEF;5;0;0
+49;Imran Fiddi;CODM;DEF;5;0;0
+50;Chams Eddine Knaidil;CODM;DEF;5;0;0
+51;Anass Nouader;CODM;DEF;5;0;0
+52;Karim El Bounagate;CODM;DEF;5;0;0
+53;Hamza Malki;CODM;DEF;5;0;0
+54;Ayoub Lourhraz;CODM;DEF;5;0;0
+55;Reda Bounaga;CODM;GK;5;0;0
+56;Aymane Majid;CODM;GK;5;0;0
+57;Yassine Lamine;DHJ;ATT;5;0;0
+58;Romuald Dacosta;DHJ;ATT;5;0;0
+59;Abderrazak Ennakouss;DHJ;ATT;5;0;0
+60;Abdallah Ziani;DHJ;ATT;5;0;0
+61;Khalid Baba;DHJ;MID;5;0;0
+62;El Hacen;DHJ;MID;5;0;0
+63;Brahim El Idrissi Bouzidi;DHJ;MID;5;0;0
+64;Hiudaifa Jamaane;DHJ;MID;5;0;0
+65;Youssef El Ghazoui;DHJ;MID;5;0;0
+66;Mouad Mouchtanim;DHJ;MID;5;0;0
+67;Achraf El Idrissi;DHJ;MID;5;0;0
+68;Youssef Michte;DHJ;MID;5;0;0
+69;Ayoub El Khaffi;DHJ;MID;5;0;0
+70;Moustapha Chichane;DHJ;MID;5;0;0
+71;Mohamed Hilali;DHJ;MID;5;0;0
+72;Marouane Hadhoudi;DHJ;DEF;5;0;0
+73;Omar Jerrari;DHJ;DEF;5;0;0
+74;Mohamed Bentarcha;DHJ;DEF;5;0;0
+75;Marouane Lemzaouri;DHJ;DEF;5;0;0
+76;Yassine Fatine;DHJ;DEF;5;0;0
+77;Soufiane Abaaziz;DHJ;DEF;5;0;0
+78;Hadi Idrissou;DHJ;DEF;5;0;0
+79;Oussama Benchchaoui;DHJ;DEF;5;0;0
+80;Aymane Takoua;DHJ;DEF;5;0;0
+81;Babacar Niasse;DHJ;GK;5;0;0
+82;Marouane Bessak;DHJ;GK;5;0;0
+83;Ayoub Ait Wahmane;DHJ;GK;5;0;0
+84;Haytam Bentounsi;DHJ;GK;5;0;0
+85;Ayoub Mouloua;DHJ;GK;5;0;0
+86;Mohamed El Badoui;ATT;5;0;0;
+87;Ali El Harrak;FUS;ATT;5;0;0
+88;Arthur Gitego;FUS;ATT;5;0;0
+89;Ismail Moutaraji;FUS;MID;5;0;0
+90;Amine Souane;FUS;MID;5;0;0
+91;Anas El Makkaoui;FUS;MID;5;0;0
+92;Chouaib Faidi;FUS;MID;5;0;0
+93;Anas Serrhat;FUS;MID;5;0;0
+94;Salaheddine Benyachou;FUS;MID;5;0;0
+95;Lamine Diakité;FUS;MID;5;0;0
+96;Oussama Raoui;FUS;MID;5;0;0
+97;Soufiane Et Tazi;FUS;MID;5;0;0
+98;Abdessamad Mahir;FUS;MID;5;0;0
+99;Akram Eddaoudi;FUS;MID;5;0;0
+100;Amine Farhane;FUS;DEF;5;0;0
+101;Oussama Soukhane;FUS;DEF;5;0;0
+102;Ayoub Moudden;FUS;DEF;5;0;0
+103;Yassine Amhih;FUS;DEF;5;0;0
+104;Achraf Ramzi;FUS;DEF;5;0;0
+105;Houdaifa El Mahasni;FUS;DEF;5;0;0
+106;Moncef Amri;FUS;DEF;5;0;0
+107;Amine El Msane;FUS;DEF;5;0;0
+108;Mouad Bahsain;FUS;DEF;5;0;0
+109;Abdesalem Achnab;FUS;DEF;5;0;0
+110;Ayoub Lakred;FUS;GK;5;0;0
+111;Rachid Ghanimi;FUS;GK;5;0;0
+112;Imrane Sadiki;FUS;GK;5;0;0
+113;Walid Jarmouni;HUSA;ATT;5;0;0
+114;Baba Ilou;HUSA;ATT;5;0;0
+115;Aziz Kaidi;HUSA;ATT;5;0;0
+116;Mohamed Amine Katiba;HUSA;MID;5;0;0
+117;Rodrigue Kossi;HUSA;MID;5;0;0
+118;Jose Dembi;HUSA;MID;5;0;0
+119;Mohamed Bakhkhach;HUSA;MID;5;0;0
+120;Ange-Freddy Plumain;HUSA;MID;5;0;0
+121;Hamza Moumadi;HUSA;MID;5;0;0
+122;Fahd Bendahmane;HUSA;MID;5;0;0
+123;Zakaria Ami;HUSA;MID;5;0;0
+124;Ayoub Yousfi Amkadmi;HUSA;MID;5;0;0
+125;Jalal Tachtach;HUSA;MID;5;0;0
+126;Abdallah Boukhanfer;HUSA;MID;5;0;0
+127;Badreddine Octobre;HUSA;MID;5;0;0
+128;Hamza El Belghyty;HUSA;MID;5;0;0
+129;Mehdi Akoumi;HUSA;MID;5;0;0
+130;Euclides Cabral;HUSA;DEF;5;0;0
+131;Zakary Lamgahez;HUSA;DEF;5;0;0
+132;Nassim Ouammou;HUSA;DEF;5;0;0
+133;Assane Beye;HUSA;DEF;5;0;0
+134;Ayman Tarrazi;HUSA;DEF;5;0;0
+135;Ismail Hrila;HUSA;DEF;5;0;0
+136;Soulaiman El Amrani;HUSA;DEF;5;0;0
+137;Hamza Kalai;HUSA;DEF;5;0;0
+138;Adil Grnan;HUSA;DEF;5;0;0
+139;Akram Haimoud;HUSA;DEF;5;0;0
+140;Ilias Motik;HUSA;GK;5;0;0
+141;Hicham El Mejhed;HUSA;GK;5;0;0
+142;Badreddine Abyir;HUSA;GK;5;0;0
+143;Hisham El Majhad;HUSA;GK;5;0;0
+144;Papa Magueye Gaye;IRT;ATT;5;0;0
+145;Jawad Rhabra;IRT;ATT;5;0;0
+146;Livty Kpolo;IRT;ATT;5;0;0
+147;Mohsine Moutouali;IRT;MID;5;0;0
+148;Zakaria Bakkali;IRT;MID;5;0;0
+149;Ahmed Chentouf;IRT;MID;5;0;0
+150;Zakaria Kiani;IRT;MID;5;0;0
+151;Ennaama El Bellali;IRT;MID;5;0;0
+152;Siriki Sanogo;IRT;MID;5;0;0
+153;Faouzi Abdoul Mutalib;IRT;MID;5;0;0
+154;Hamza El Moudene;IRT;MID;5;0;0
+155;Haytham El Bahja;IRT;MID;5;0;0
+156;Anas Lamrabat;IRT;MID;5;0;0
+157;Moussa Kote;IRT;MID;5;0;0
+158;Adam Darazi;IRT;MID;5;0;0
+159;Louay El Moussaoui;IRT;MID;5;0;0
+160;Bilal El Ouadghiri;IRT;DEF;5;0;0
+161;Mohamed Saoud;IRT;DEF;5;0;0
+162;Badr Gaddarine;IRT;DEF;5;0;0
+163;Ayoub El Jorfi;IRT;DEF;5;0;0
+164;Oussama Al Aiz;IRT;DEF;5;0;0
+165;Akram El Wahabi;IRT;DEF;5;0;0
+166;Mohamed El Guartit;IRT;DEF;5;0;0
+167;Malcolm Barcola;IRT;GK;5;0;0
+168;Amine El Ouaad;IRT;GK;5;0;0
+169;Youssef Laghzal;IRT;GK;5;0;0
+170;Khalid Boutaïb;KACM;ATT;5;0;0
+171;Souleymane Cissé;KACM;ATT;5;0;0
+172;Younes El Bahraoui;KACM;ATT;5;0;0
+173;Ibrahim El Omari;KACM;ATT;5;0;0
+174;Oussama Mahrous;KACM;MID;5;0;0
+175;Ousseni Badamassi;KACM;MID;5;0;0
+176;Hamza El Janati;KACM;MID;5;0;0
+177;Youssef Zghoudi;KACM;MID;5;0;0
+178;Ismail Mihrab;KACM;MID;5;0;0
+179;Gnolou Claude;KACM;MID;5;0;0
+180;Oussama Haffari;KACM;MID;5;0;0
+181;Youssef Riani;KACM;MID;5;0;0
+182;Nadir Lougmani;KACM;MID;5;0;0
+183;Saleh Al Sellami;KACM;MID;5;0;0
+184;Khalil Tamrani;KACM;MID;5;0;0
+185;Johnstone Omurwa;KACM;DEF;5;0;0
+186;Ismail Gazaoui;KACM;DEF;5;0;0
+187;Jawad Khallouki;KACM;DEF;5;0;0
+188;Mohamed Elabdi;KACM;DEF;5;0;0
+189;Mouhamed Wele;KACM;DEF;5;0;0
+190;Ismail El Alami;KACM;DEF;5;0;0
+191;Jad Assouab;KACM;DEF;5;0;0
+192;Mohamed Jemjami;KACM;GK;5;0;0
+193;Mohamed Baayou;KACM;GK;5;0;0
+194;Anass Rachak;KACM;GK;5;0;0
+195;Soufiane Benjdida;MAS;ATT;5;0;0
+196;Mouad Hmamouchi;MAS;ATT;5;0;0
+197;Zakaria Allaoui;MAS;ATT;5;0;0
+198;Anas Tahiri;MAS;MID;5;0;0
+199;Soulaïman Allouch;MAS;MID;5;0;0
+200;Amine Oudrhiri;MAS;MID;5;0;0
+201;Kabelo Seakanyeng;MAS;MID;5;0;0
+202;Noureddine Oussama;MAS;MID;5;0;0
+203;Achraf Harmach;MAS;MID;5;0;0
+204;Youssef Dalouzi;MAS;MID;5;0;0
+205;El Habib Brija;MAS;MID;5;0;0
+206;Hamza Afsal;MAS;MID;5;0;0
+207;Nizar Guessous;MAS;MID;5;0;0
+208;Mohamed Loumim;MAS;MID;5;0;0
+209;Hamza Oukaili;MAS;MID;5;0;0
+210;Issa M'bareck;MAS;MID;5;0;0
+211;Benjamin Tanimu;MAS;DEF;5;0;0
+212;Kevin Yamga;MAS;DEF;5;0;0
+213;Abdelilah Madkour;MAS;DEF;5;0;0
+214;Zakaria Hamadi;MAS;DEF;5;0;0
+215;Hamza Ait Allal;MAS;DEF;5;0;0
+216;Adil Rhaili;MAS;DEF;5;0;0
+217;Driss El-Jabli;MAS;DEF;5;0;0
+218;Saad Ait Khorsa;MAS;DEF;5;0;0
+219;Marouane Ouhrou;MAS;DEF;5;0;0
+220;Ayman Chabani;MAS;DEF;5;0;0
+221;Reda Mhannaoui;MAS;DEF;5;0;0
+222;Salaheddine Chihab;MAS;GK;5;0;0
+223;Walid Lghrissi;MAS;GK;5;0;0
+224;Oussama Errahmany;MAS;GK;5;0;0
+225;Moussa Koné;OCS;ATT;5;0;0
+226;Charki El Bahri;OCS;ATT;5;0;0
+227;Anas Samoudi;OCS;ATT;5;0;0
+228;Anas Nqaiti;OCS;ATT;5;0;0
+229;Marwane Elaz;OCS;ATT;5;0;0
+230;Salaheddine Errahouli;OCS;MID;5;0;0
+231;Soufian El Moudane;OCS;MID;5;0;0
+232;Abdoulaye Diarra;OCS;MID;5;0;0
+233;Karim L'Koucha;OCS;MID;5;0;0
+234;Anass Eddaou;OCS;MID;5;0;0
+235;Walid Rhailouf;OCS;MID;5;0;0
+236;Mohamed Chemlal;OCS;MID;5;0;0
+237;Saad Morsli;OCS;MID;5;0;0
+238;Abderrahmane Qassaq;OCS;MID;5;0;0
+239;Oussama Ichou;OCS;MID;5;0;0
+240;Marouane Samoudi;OCS;MID;5;0;0
+241;Ahmad El Houari;OCS;MID;5;0;0
+242;Anouar Tarkhatt;OCS;DEF;5;0;0
+243;Hamza Semmoumy;OCS;DEF;5;0;0
+244;Aboubacar Kalhil Sylla;OCS;DEF;5;0;0
+245;Anas Soufeir;OCS;DEF;5;0;0
+246;Faraji Karmoune;OCS;DEF;5;0;0
+247;Yasser Ezzine;OCS;DEF;5;0;0
+248;Yassine Kordani;OCS;DEF;5;0;0
+249;Souhail Yechou;OCS;DEF;5;0;0
+250;Ayman El Hadry;OCS;DEF;5;0;0
+251;Hamza Hamiani;OCS;GK;5;0;0
+252;Imad Askar;OCS;GK;5;0;0
+253;Abderrahmane Kernane;OCS;GK;5;0;0
+254;Oussarhan;OD;ATT;5;0;0
+255;Soufiane Jazouli;OD;ATT;5;0;0
+256;Mohssine Abba;OD;ATT;5;0;0
+257;Brahim Ait Hammou;OD;ATT;5;0;0
+258;Amine Aghou;OD;ATT;5;0;0
+259;Salah Eddine Essalehy;OD;ATT;5;0;0
+260;Reda Abardi;OD;ATT;5;0;0
+261;Charaf-Eddine Boulahroud;OD;MID;5;0;0
+262;Mohamed Habbali;OD;MID;5;0;0
+263;Ayoub Benaadi;OD;MID;5;0;0
+264;Hamza Janan Allah;OD;MID;5;0;0
+265;Mohamed Adjar;OD;MID;5;0;0
+266;Khalid Raiss;OD;MID;5;0;0
+267;Anass Aziz;OD;MID;5;0;0
+268;Hamza Saoud;OD;MID;5;0;0
+269;Mounir El Gouj;OD;MID;5;0;0
+270;Ali Chafik;OD;MID;5;0;0
+271;Salah Eddine Abderahim;OD;MID;5;0;0
+272;Redouane Oubidar;OD;MID;5;0;0
+273;Brahim Amzili;OD;MID;5;0;0
+274;Youssef Fahmi;OD;MID;5;0;0
+275;Hicham Ait Brahim;OD;DEF;5;0;0
+276;Cheick Keita;OD;DEF;5;0;0
+277;Ameur Aboujemaa;OD;DEF;5;0;0
+278;Yassine Boughaz;OD;DEF;5;0;0
+279;Abdullah Mani;OD;DEF;5;0;0
+280;Mouhcine Boumlik;OD;DEF;5;0;0
+281;Younes El Khafi;OD;DEF;5;0;0
+282;Mohamed Idar;OD;GK;5;0;0
+283;Tarik Kotobi;OD;GK;5;0;0
+284;Hafid Id Said;OD;GK;5;0;0
+285;Ismail Khafi;RCA;ATT;5;0;0
+286;Victor Ábrego;RCA;ATT;5;0;0
+287;Youness Najari;RCA;ATT;5;0;0
+288;Sabir Bougrine;RCA;MID;5;0;0
+289;Pape Ousmane Sakho;RCA;MID;5;0;0
+290;Mouad Dahak;RCA;MID;5;0;0
+291;Bilal Ould-Chikh;RCA;MID;5;0;0
+292;Adam Ennafati;RCA;MID;5;0;0
+293;Mohamed Al Makahasi;RCA;MID;5;0;0
+294;Ayoub Maamouri;RCA;MID;5;0;0
+295;Othmane Chraibi;RCA;MID;5;0;0
+296;Hilal Ferdaoussi;RCA;MID;5;0;0
+297;Moses Orkuma;RCA;MID;5;0;0
+298;Youssef Belammari;RCA;DEF;5;0;0
+299;Badr Benoun;RCA;DEF;5;0;0
+300;Mohamed Boulacsout;RCA;DEF;5;0;0
+301;Mehdi Mchakh'chekh;RCA;DEF;5;0;0
+302;Bouchaib Arrassi;RCA;DEF;5;0;0
+303;Ismail Mokadem;RCA;DEF;5;0;0
+304;Abdellah Khafifi;RCA;DEF;5;0;0
+305;Abdelkarim Baadi;RCA;DEF;5;0;0
+306;Saad Farid;RCA;DEF;5;0;0
+307;Mehdi Al Harrar;RCA;GK;5;0;0
+308;Khalid Kbiri Alaoui;RCA;GK;5;0;0
+309;Zoubir Yassine;RCA;GK;5;0;0
+310;Abderrazak El Wadi;RCA;GK;5;0;0
+311;Zacarias Ghailan;RCAZ;ATT;5;0;0
+312;Ahmed Rhailouf;RCAZ;ATT;5;0;0
+313;Taha Alachbili;RCAZ;ATT;5;0;0
+314;Abdelaziz El Hamzaoui;RCAZ;ATT;5;0;0
+315;Zakaria Bahrou;RCAZ;ATT;5;0;0
+316;Marouane Oujeddou;RCAZ;ATT;5;0;0
+317;Mountassir Lahtimi;RCAZ;MID;5;0;0
+318;Zakaria Fatihi;RCAZ;MID;5;0;0
+319;Zakaria Habti;RCAZ;MID;5;0;0
+320;Badr Boulahroud;RCAZ;MID;5;0;0
+321;Abdellah Farah;RCAZ;MID;5;0;0
+322;Faffa El Yazid;RCAZ;MID;5;0;0
+323;Amine Azri;RCAZ;MID;5;0;0
+324;Ishak Zidani;RCAZ;MID;5;0;0
+325;Mohammad El Fakih;RCAZ;MID;5;0;0
+326;Ayoub Joulale;RCAZ;MID;5;0;0
+327;Anass El Ghannouj;RCAZ;MID;5;0;0
+328;Ismail Gourad;RCAZ;MID;5;0;0
+329;Reda Lakhmidi;RCAZ;MID;5;0;0
+330;Abdellatif El Bajjani;RCAZ;MID;5;0;0
+331;Ousmane Diallo;RCAZ;DEF;5;0;0
+332;Abdessamad Badaoui;RCAZ;DEF;5;0;0
+333;James Ajako;RCAZ;DEF;5;0;0
+334;Youssef Aoujdal;RCAZ;DEF;5;0;0
+335;Aymane El Aouani;RCAZ;DEF;5;0;0
+336;Zouheir El Hachemi;RCAZ;DEF;5;0;0
+337;Ayoub Tine;RCAZ;DEF;5;0;0
+338;Bilal Soufi;RCAZ;DEF;5;0;0
+339;Yahya Jammali;RCAZ;DEF;5;0;0
+340;Mehdi El Jourbaoui;RCAZ;GK;5;0;0
+341;Aissa Sioudi;RCAZ;GK;5;0;0
+342;Mohamed Ferni;RCAZ;GK;5;0;0
+343;Oussama Lamlioui;RSB;ATT;5;0;0
+344;Youness El Kaabi;RSB;ATT;5;0;0
+345;Paul Bassène;RSB;ATT;5;0;0
+346;Mamadou Lamine Camara;RSB;MID;5;0;0
+347;Youssef Mehri;RSB;MID;5;0;0
+348;Imad Riahi;RSB;MID;5;0;0
+349;Mounir Chouiar;RSB;MID;5;0;0
+350;Ayoub Khairi;RSB;MID;5;0;0
+351;Zinédine Machach;RSB;MID;5;0;0
+352;Reda Hajji;RSB;MID;5;0;0
+353;Yassine Labhiri;RSB;MID;5;0;0
+354;Soumaila Sidibe;RSB;MID;5;0;0
+355;Rayane Aabid;RSB;MID;5;0;0
+356;Mohamed El Morabit;RSB;MID;5;0;0
+357;Mohamed Ouyahia;RSB;MID;5;0;0
+358;Gnolou Claude;RSB;MID;5;0;0
+359;Amine Azri;RSB;MID;5;0;0
+360;Mohammed Ouyahya;RSB;MID;5;0;0
+361;Mehdi Oubila;RSB;MID;5;0;0
+362;Ismael Kandouss;RSB;DEF;5;0;0
+363;Oussama Haddadi;RSB;DEF;5;0;0
+364;Abdelhak Assal;RSB;DEF;5;0;0
+365;Haytam Manaout;RSB;DEF;5;0;0
+366;Hamza El Moussaoui;RSB;DEF;5;0;0
+367;Et-Tayeb Boukhriss;RSB;DEF;5;0;0
+368;Amine El Maswab;RSB;DEF;5;0;0
+369;Mohamed Aymen Sadil;RSB;DEF;5;0;0
+370;Munir Mohamedi;RSB;GK;5;0;0
+371;Mehdi Maftah;RSB;GK;5;0;0
+372;Bilal Kamal;RSB;GK;5;0;0
+373;Yacine Bammou;UTS;ATT;5;0;0
+374;Mohamed Radid;UTS;ATT;5;0;0
+375;Hassan Aqboub;UTS;ATT;5;0;0
+376;Brahim El Bahraoui;UTS;ATT;5;0;0
+377;Nacer Moustaghfir;UTS;ATT;5;0;0
+378;Yassine Zraa;UTS;ATT;5;0;0
+379;Hossam Essadak;UTS;MID;5;0;0
+380;Mohamed Amine Essahel;UTS;MID;5;0;0
+381;Abdelkabir El Ouady;UTS;MID;5;0;0
+382;Adam Baallal;UTS;MID;5;0;0
+383;Adam Chakir;UTS;MID;5;0;0
+384;Papa Amady Gadio;UTS;MID;5;0;0
+385;Souhayl Zamrat;UTS;MID;5;0;0
+386;Redouan Ait Lamkadem;UTS;MID;5;0;0
+387;Aissa Saidi;UTS;MID;5;0;0
+388;Banfa Sylla;UTS;MID;5;0;0
+389;Youness Dahmani;UTS;MID;5;0;0
+390;Hamza Bousqal;UTS;MID;5;0;0
+391;Ziendine Brighet;UTS;MID;5;0;0
+392;Ayoub Benaadi;UTS;MID;5;0;0
+393;Danilson Tavares;UTS;MID;5;0;0
+394;Kamal Belarbi;UTS;MID;5;0;0
+395;Abdellah Boudlal;UTS;MID;5;0;0
+396;Fouad Zahouani;UTS;DEF;5;0;0
+397;Hamza Regragui;UTS;DEF;5;0;0
+398;Anas Nanah;UTS;DEF;5;0;0
+399;Khalid Kasbi;UTS;DEF;5;0;0
+400;Yassine El Khalej;UTS;DEF;5;0;0
+401;Ilias Haddad;UTS;DEF;5;0;0
+402;Youness Akharraz;UTS;DEF;5;0;0
+403;Youssef Kajai;UTS;DEF;5;0;0
+404;Tahar El Khalej;UTS;DEF;5;0;0
+405;Abderrahim Bou Irkane;UTS;DEF;5;0;0
+406;Walid Hasbi;UTS;GK;5;0;0
+407;Reda Asmama;UTS;GK;5;0;0
+408;Abdellah Bentayg;UTS;GK;5;0;0
+409;Abderhmane El Houasli;UTS;GK;5;0;0
+410;Walid Atlassi;UTS;GK;5;0;0
+411;Houssam Bouelainine;UTS;GK;5;0;0
+412;Stephane Aziz Ki;WAC;ATT;5;0;0
+413;Thembinkosi Lorch;WAC;ATT;5;0;0
+414;Tumisang Orebonye;WAC;ATT;5;0;0
+415;Zouhair El Moutaraji;WAC;ATT;5;0;0
+416;Hamza Hannouri;WAC;ATT;5;0;0
+417;Mohammed El Ouardi;WAC;ATT;5;0;0
+418;Chamss Eddine El Allaly;WAC;Attaquant;5;0;0
+419;Nordin Amrabat;WAC;Milieu;5;0;0
+420;Arthur Wenderroscky;WAC;Milieu;5;0;0
+421;Hamza Sakhi;WAC;Milieu;5;0;0
+422;Pedrinho;WAC;Milieu;5;0;0
+423;Mohamed Rayhi;WAC;Milieu;5;0;0
+424;Oussama Zemraoui;WAC;Milieu;5;0;0
+425;Abdelghafour Lamirat;WAC;Milieu;5;0;0
+426;Walid Nassi;WAC;Milieu;5;0;0
+427;Walid Sabbar;WAC;Milieu;5;0;0
+428;Mouad Aounzou;WAC;Milieu;5;0;0
+429;Hamza El Wasti;WAC;Milieu;5;0;0
+430;Rayane Mahtou;WAC;Milieu;5;0;0
+431;Joseph Bakasu;WAC;Milieu;5;0;0
+432;Yassine Bennani;WAC;Milieu;5;0;0
+433;Mohamed Moufid;WAC;Défenseur;5;0;0
+434;Guilherme Ferreira;WAC;Défenseur;5;0;0
+435;Mohamed Bouchouari;WAC;Défenseur;5;0;0
+436;Bart Meijers;WAC;Défenseur;5;0;0
+437;Ayoub Boucheta;WAC;Défenseur;5;0;0
+438;Amine Aboulfath;WAC;Défenseur;5;0;0
+439;Ayman Dairani;WAC;Défenseur;5;0;0
+440;Mohammed El Jadidi;WAC;Défenseur;5;0;0
+441;Ismail Gazaoui;WAC;Défenseur;5;0;0
+442;Ibrahim El Afouri;WAC;Défenseur;5;0;0
+443;El Mehdi Benabid;WAC;Gardien;5;0;0
+444;Youssef El Motie;WAC;Gardien;5;0;0
+445;Omar Aqzdaou;WAC;Gardien;5;0;0
+446;Abdelali Mhamdi;WAC;Gardien;5;0;0
