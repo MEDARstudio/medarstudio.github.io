@@ -115,7 +115,7 @@
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-        .logout-btn, .team-btn {
+        .logout-btn {
             background: none;
             border: 1px solid var(--accent);
             color: var(--accent);
@@ -124,11 +124,8 @@
             cursor: pointer;
             font-size: 0.9rem;
             transition: all 0.3s ease;
-            text-decoration: none; /* Pour le lien */
-            display: inline-block; /* Pour le lien */
-            text-align: center; /* Pour le lien */
         }
-        .logout-btn:hover, .team-btn:hover {
+        .logout-btn:hover {
             background: var(--accent);
             color: var(--dark);
         }
@@ -219,6 +216,33 @@
         #googleSignInContainer {
             display: none;
             margin-top: 2rem;
+        }
+        /* Bouton "Sélectionner votre équipe" - Centré */
+        #selectTeamButtonContainer {
+            text-align: center;
+            margin-bottom: 2rem;
+            display: none; /* Masqué par défaut */
+        }
+        #selectTeamButton {
+             background: var(--accent);
+             color: white;
+             border: none;
+             padding: 1rem 2rem;
+             font-size: 1.2rem;
+             font-weight: 600;
+             border-radius: 50px;
+             cursor: pointer;
+             transition: all 0.3s ease;
+             box-shadow: 0 4px 15px rgba(186, 85, 211, 0.4);
+             display: inline-flex;
+             align-items: center;
+             gap: 10px;
+             text-decoration: none;
+        }
+        #selectTeamButton:hover {
+             background: var(--primary);
+             transform: translateY(-3px);
+             box-shadow: 0 6px 20px rgba(106, 13, 173, 0.6);
         }
         /* Règles du jeu */
         .rules-section {
@@ -726,6 +750,12 @@
             </div>
         </div>
     </section>
+    <!-- Bouton "Sélectionner votre équipe" centré (juste avant les règles) -->
+    <div id="selectTeamButtonContainer">
+        <a href="selection-equipe.html" id="selectTeamButton">
+            <i class="fas fa-user-friends"></i> Sélectionner votre équipe
+        </a>
+    </div>
     <!-- Règles du jeu -->
     <section class="rules-section" id="rules">
         <div class="rules-container">
@@ -935,7 +965,6 @@
     </footer>
     <script>
         // Configuration de Google Sign-In
-        // Remplacez "VOTRE_ID_CLIENT_GOOGLE" par votre vrai ID Client
         const GOOGLE_CLIENT_ID = "514757877097-ke0d5ovl55vbprlc4smkg0t5oudep0v0.apps.googleusercontent.com";
 
         // Gestion du menu mobile
@@ -966,9 +995,9 @@
             document.body.style.overflow = 'auto';
         });
 
-        // Fermer le menu quand un lien est cliqué (correction de la portée de 'this')
+        // Gestion des transitions de glissement pour les liens de navigation mobile
         navLinks.forEach(link => {
-            link.addEventListener('click', function(e) { // Utiliser 'function' pour avoir 'this'
+            link.addEventListener('click', function(e) {
                 e.preventDefault();
                 mobileMenu.classList.remove('active');
                 overlay.classList.remove('active');
@@ -978,7 +1007,7 @@
                     nav.classList.remove('active');
                 });
                 // Ajouter la classe active au lien cliqué
-                this.classList.add('active'); // 'this' fait référence au lien cliqué
+                this.classList.add('active');
                 // Obtenir l'ID de la section cible
                 const targetId = this.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
@@ -993,14 +1022,14 @@
 
         // Gestion des transitions de glissement pour les liens de navigation desktop
         document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', function(e) { // Utiliser 'function' pour avoir 'this'
+            link.addEventListener('click', function(e) {
                 e.preventDefault();
                 // Retirer la classe active de tous les liens
                 document.querySelectorAll('nav a').forEach(nav => {
                     nav.classList.remove('active');
                 });
                 // Ajouter la classe active au lien cliqué
-                this.classList.add('active'); // 'this' fait référence au lien cliqué
+                this.classList.add('active');
                 // Obtenir l'ID de la section cible
                 const targetId = this.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
@@ -1082,7 +1111,7 @@
             // et créer/mettre à jour le compte utilisateur dans votre base de données
             console.log("Jeton d'identification: " + response.credential);
             // Rediriger vers la page de sélection des joueurs (à adapter selon votre structure)
-            // window.location.href = 'selection.html';
+            // window.location.href = 'selection-equipe.html';
         }
 
         // Fonction pour décoder le jeton JWT
@@ -1099,7 +1128,7 @@
             }
         }
 
-        // Fonction pour afficher le profil utilisateur avec le bouton "Sélection Équipe"
+        // Fonction pour afficher le profil utilisateur
         function displayUserProfile(user) {
             const userProfile = document.getElementById('userProfile');
             userProfile.innerHTML = `
@@ -1107,14 +1136,17 @@
                     <img src="${user.picture}" alt="${user.name}" class="user-avatar">
                     <span class="user-name">${user.name}</span>
                 </div>
-                <!-- Bouton pour aller à la sélection d'équipe -->
-                <a href="selection equipe.html" class="team-btn">
-                    <i class="fas fa-user-friends"></i> Équipe
-                </a>
                 <button class="logout-btn" id="logoutBtn">Déconnexion</button>
             `;
             // Masquer le bouton "Commencer maintenant"
             document.getElementById('startBtn').style.display = 'none';
+
+            // --- Nouveau : Afficher le bouton "Sélectionner votre équipe" ---
+            document.getElementById('selectTeamButtonContainer').style.display = 'block';
+
+            // --- Nouveau : Sauvegarder les données utilisateur dans localStorage ---
+            localStorage.setItem('fantasyUser', JSON.stringify(user));
+
             // Ajouter l'événement de déconnexion
             document.getElementById('logoutBtn').addEventListener('click', logout);
         }
@@ -1126,13 +1158,22 @@
             // Réafficher le bouton "Commencer maintenant"
             const startBtn = document.getElementById('startBtn');
             if (startBtn) {
-                startBtn.style.display = 'inline-flex'; // Ou 'block', selon votre style initial
+                startBtn.style.display = 'inline-flex';
             }
              // Masquer à nouveau le conteneur de connexion Google si nécessaire
             const signInContainer = document.getElementById('googleSignInContainer');
             if (signInContainer) {
                  signInContainer.style.display = 'none';
             }
+
+            // --- Nouveau : Masquer le bouton "Sélectionner votre équipe" ---
+            document.getElementById('selectTeamButtonContainer').style.display = 'none';
+
+            // --- Nouveau : Supprimer les données utilisateur de localStorage ---
+            localStorage.removeItem('fantasyUser');
+            // --- Nouveau : Supprimer les données de l'équipe de localStorage (si vous les stockez ici) ---
+            // localStorage.removeItem('fantasyTeamData'); // Décommentez si vous sauvegardez l'équipe ici
+
             alert('Vous avez été déconnecté avec succès.');
         }
 
@@ -1155,11 +1196,22 @@
             }
         }
 
-        // Initialisation au chargement de la page
+        // --- Nouveau : Vérifier si l'utilisateur est déjà connecté au chargement de la page ---
         window.onload = function() {
-            // Vous pouvez vérifier ici si l'utilisateur est déjà connecté (via localStorage, etc.)
-            // et appeler displayUserProfile si c'est le cas.
-            // Pour l'instant, on part du principe qu'il n'est pas connecté au chargement initial.
+            const savedUser = localStorage.getItem('fantasyUser');
+            if (savedUser) {
+                try {
+                    const user = JSON.parse(savedUser);
+                    // Afficher le profil utilisateur sans passer par Google Sign-In
+                    displayUserProfile(user);
+                    console.log("Utilisateur reconnecté automatiquement:", user.name);
+                } catch (e) {
+                    console.error("Erreur lors de la reconnexion automatique:", e);
+                    // En cas d'erreur de parsing, nettoyer le localStorage
+                    localStorage.removeItem('fantasyUser');
+                }
+            }
+            // Vous pouvez aussi initialiser d'autres éléments ici si nécessaire
         };
     </script>
 </body>
