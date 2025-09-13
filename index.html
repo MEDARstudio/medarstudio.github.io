@@ -1,10 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Permissions-Policy" content="identity-credentials-get=*">
     <title>Fantasy Botola Pro Inwi 2025/2026</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://accounts.google.com/gsi/client" async defer></script>
@@ -15,6 +13,7 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         :root {
             --primary: #6A0DAD; /* Violet foncé */
             --secondary: #9370DB; /* Violet moyen */
@@ -26,12 +25,14 @@
             --card-bg: rgba(106, 13, 173, 0.1);
             --hover-bg: rgba(186, 85, 211, 0.15);
         }
+
         body {
             background: linear-gradient(135deg, var(--dark-bg) 0%, #2d0052 100%);
             color: var(--light);
             min-height: 100vh;
             overflow-x: hidden;
         }
+
         /* En-tête */
         header {
             background: rgba(0, 0, 0, 0.7);
@@ -45,11 +46,13 @@
             z-index: 100;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
+
         .logo {
             display: flex;
             align-items: center;
             gap: 15px;
         }
+
         .logo-icon {
             background: var(--primary);
             width: 50px;
@@ -60,18 +63,22 @@
             justify-content: center;
             font-size: 1.5rem;
         }
+
         .logo-text {
             font-size: 1.8rem;
             font-weight: 700;
         }
+
         .logo-text span {
             color: var(--accent);
         }
+
         nav ul {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
+
         nav a {
             color: var(--light);
             text-decoration: none;
@@ -83,15 +90,63 @@
             align-items: center;
             gap: 8px;
         }
+
         nav a:hover {
             color: var(--accent);
             background: var(--hover-bg);
             transform: translateY(-2px);
         }
+
         nav a.active {
             color: var(--accent);
             background: var(--hover-bg);
         }
+
+        /* Profil utilisateur */
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+        }
+
+        .user-name {
+            font-weight: 500;
+            max-width: 150px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .logout-btn {
+            background: none;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
         /* Toggle menu mobile */
         .menu-toggle {
             display: none;
@@ -104,9 +159,11 @@
             border-radius: 5px;
             transition: all 0.3s ease;
         }
+
         .menu-toggle:hover {
             background: var(--hover-bg);
         }
+
         /* Sections */
         section {
             min-height: 100vh;
@@ -114,6 +171,7 @@
             display: flex;
             align-items: center;
         }
+
         /* Section Hero */
         .hero {
             text-align: center;
@@ -122,15 +180,18 @@
             flex-direction: column;
             justify-content: center;
         }
+
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
+
         .hero h1 span {
             color: var(--accent);
             display: block;
         }
+
         .hero p {
             font-size: 1.3rem;
             max-width: 700px;
@@ -138,6 +199,7 @@
             color: #e0e0e0;
             line-height: 1.6;
         }
+
         .cta-button {
             background: var(--primary);
             color: white;
@@ -155,19 +217,23 @@
             margin: 0.5rem;
             border: 2px solid var(--accent);
         }
+
         .cta-button:hover {
             background: var(--accent);
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(186, 85, 211, 0.6);
         }
+
         .cta-button.secondary {
             background: transparent;
             border: 2px solid var(--accent);
             color: var(--accent);
         }
+
         .cta-button.secondary:hover {
             background: var(--hover-bg);
         }
+
         .hero-buttons {
             display: flex;
             justify-content: center;
@@ -175,21 +241,25 @@
             gap: 1rem;
             margin-top: 2rem;
         }
+
         /* Section de connexion masquée */
         #googleSignInContainer {
             display: none;
             margin-top: 2rem;
         }
+
         /* Règles du jeu */
         .rules-section {
             background: rgba(0, 0, 0, 0.2);
         }
+
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
             position: relative;
         }
+
         .section-title::after {
             content: '';
             display: block;
@@ -199,110 +269,208 @@
             margin: 15px auto;
             border-radius: 2px;
         }
+
         .rules-container {
             max-width: 1200px;
             margin: 0 auto;
             width: 100%;
         }
+
         .rules-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
+
         .rule-card {
             background: var(--card-bg);
             border-radius: 15px;
             padding: 2rem;
             transition: all 0.3s ease;
             border: 1px solid rgba(186, 85, 211, 0.3);
+            position: relative;
+            overflow: hidden;
         }
+
         .rule-card:hover {
             transform: translateY(-10px);
+            background: rgba(106, 13, 173, 0.2);
             box-shadow: 0 10px 25px rgba(106, 13, 173, 0.3);
+            border: 1px solid var(--accent);
         }
+
+        .rule-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--primary);
+        }
+
         .rule-header {
             display: flex;
             align-items: center;
             gap: 15px;
             margin-bottom: 1.5rem;
         }
+
         .rule-icon {
             font-size: 2rem;
             color: var(--accent);
+            min-width: 50px;
+            height: 50px;
+            background: rgba(186, 85, 211, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
         .rule-title {
             font-size: 1.5rem;
             font-weight: 600;
         }
+
         .rule-content ul {
             padding-left: 1.5rem;
         }
+
         .rule-content li {
             margin-bottom: 0.8rem;
             line-height: 1.6;
         }
+
         .highlight {
             color: var(--accent);
             font-weight: 600;
         }
-        /* ... other styles ... */
 
-        /* Modal for Username */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
-            z-index: 1001;
-            display: none; /* Hidden by default */
-            align-items: center;
+        /* Fonctionnalités - Centrées */
+        .features-centered {
+            background: rgba(0, 0, 0, 0.15);
+            text-align: center;
+            flex-direction: column;
             justify-content: center;
         }
-        .modal-content {
-            background: var(--dark-bg);
-            padding: 2.5rem;
-            border-radius: 15px;
-            border: 1px solid var(--accent);
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-            box-shadow: 0 0 30px rgba(106, 13, 173, 0.5);
+
+        .features-centered .section-title {
+            margin-bottom: 2rem;
         }
-        .modal-title {
-            font-size: 1.8rem;
+
+        .features-centered p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .features-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .feature-option {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(186, 85, 211, 0.2);
+        }
+
+        .feature-option:hover {
+            transform: translateY(-10px);
+            background: rgba(106, 13, 173, 0.2);
+            box-shadow: 0 10px 25px rgba(106, 13, 173, 0.3);
+            border: 1px solid var(--accent);
+        }
+
+        .feature-option-icon {
+            font-size: 3rem;
             color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-option h3 {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
-        .modal-text {
+
+        .feature-option p {
+            color: #d0d0d0;
+            line-height: 1.6;
             margin-bottom: 1.5rem;
-            color: #e0e0e0;
         }
-        .modal-input {
-            width: 100%;
-            padding: 0.8rem;
-            margin-bottom: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid var(--secondary);
-            border-radius: 8px;
-            color: var(--light);
-            font-size: 1rem;
-        }
-        .modal-button {
-             background: var(--primary);
-            color: white;
-            border: none;
-            padding: 0.8rem 2rem;
-            font-size: 1.1rem;
+
+        .feature-option-link {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
             font-weight: 600;
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--accent);
             border-radius: 50px;
-            cursor: pointer;
             transition: all 0.3s ease;
         }
-        .modal-button:hover {
+
+        .feature-option-link:hover {
             background: var(--accent);
+            color: var(--light);
+        }
+
+        /* Classements */
+        .rankings {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .rankings-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .rankings-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .rankings-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* Transferts */
+        .transfers {
+            background: rgba(0, 0, 0, 0.15);
+        }
+
+        .transfers-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .transfers-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .transfers-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #e0e0e0;
+            line-height: 1.6;
         }
 
         /* Footer */
@@ -310,152 +478,822 @@
             background: rgba(0, 0, 0, 0.8);
             padding: 3rem 5%;
             text-align: center;
+            border-top: 1px solid rgba(186, 85, 211, 0.2);
         }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         .footer-logo {
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
         }
-        .footer-logo span { color: var(--accent); }
-        /* Responsive styles... */
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            color: var(--light);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(106, 13, 173, 0.2);
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            background: rgba(186, 85, 211, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            color: var(--gray);
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Menu mobile */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            height: 100vh;
+            background: rgba(26, 0, 51, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: right 0.4s ease;
+            padding: 2rem;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(186, 85, 211, 0.3);
+        }
+
+        .close-menu {
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .close-menu:hover {
+            background: var(--hover-bg);
+        }
+
+        .mobile-nav ul {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .mobile-nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav a:hover, .mobile-nav a.active {
+            color: var(--accent);
+            background: var(--hover-bg);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(3px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .user-profile {
+                display: none;
+            }
+            
+            .hero {
+                padding: 3rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 3rem 1rem;
+            }
+            
+            .rules-grid, .features-options {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.8rem;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .rule-card, .feature-option {
+                padding: 1.5rem;
+            }
+            
+            .rule-header {
+                margin-bottom: 1rem;
+            }
+            
+            .rule-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.7rem;
+            }
+            
+            .rule-title {
+                font-size: 1.3rem;
+            }
+            
+            .feature-option-icon {
+                font-size: 2.5rem;
+            }
+            
+            .feature-option h3 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-title::after {
+                width: 80px;
+            }
+            
+            .rule-card, .feature-option {
+                padding: 1.3rem;
+            }
+            
+            .social-links {
+                gap: 1rem;
+            }
+            
+            .social-links a {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+            
+            .mobile-menu {
+                width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- En-tête -->
     <header>
         <div class="logo">
-            <div class="logo-icon"><i class="fas fa-futbol"></i></div>
+            <div class="logo-icon">
+                <i class="fas fa-futbol"></i>
+            </div>
             <div class="logo-text">Fantasy <span>Botola Pro</span> Inwi</div>
         </div>
         <nav>
             <ul>
                 <li><a href="#hero" class="nav-link active"><i class="fas fa-home"></i> Accueil</a></li>
                 <li><a href="#rules" class="nav-link"><i class="fas fa-book"></i> Règles du jeu</a></li>
+                <li><a href="#features" class="nav-link"><i class="fas fa-star"></i> Fonctionnalités</a></li>
+                <li><a href="#rankings" class="nav-link"><i class="fas fa-trophy"></i> Classements</a></li>
+                <li><a href="#transfers" class="nav-link"><i class="fas fa-exchange-alt"></i> Transferts</a></li>
             </ul>
         </nav>
+        <div class="user-profile" id="userProfile">
+            <!-- Profil utilisateur affiché après connexion -->
+        </div>
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
     </header>
+
+    <!-- Menu mobile -->
+    <div class="overlay" id="overlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-futbol"></i>
+                </div>
+                <div class="logo-text">Fantasy <span>Botola Pro</span> Inwi</div>
+            </div>
+            <button class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#hero" class="nav-link active"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="#rules" class="nav-link"><i class="fas fa-book"></i> Règles du jeu</a></li>
+                <li><a href="#features" class="nav-link"><i class="fas fa-star"></i> Fonctionnalités</a></li>
+                <li><a href="#rankings" class="nav-link"><i class="fas fa-trophy"></i> Classements</a></li>
+                <li><a href="#transfers" class="nav-link"><i class="fas fa-exchange-alt"></i> Transferts</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <!-- Section Hero -->
     <section class="hero" id="hero">
         <h1>Gérez votre équipe idéale <span>de la Botola Pro Inwi</span></h1>
-        <p>Utilisez votre budget de 100M MAD pour créer la meilleure équipe. Accumulez des points grâce aux performances réelles des joueurs et montez dans le classement!</p>
+        <p>Utilisez votre budget de 100M MAD pour créer la meilleure équipe de la Botola Pro. Accumulez des points grâce aux performances réelles des joueurs et montez dans le classement!</p>
         <div class="hero-buttons">
-            <button class="cta-button" id="startBtn"><i class="fas fa-play-circle"></i> Commencer maintenant</button>
-            <a href="#rules" class="cta-button secondary nav-link"><i class="fas fa-book"></i> Voir les règles</a>
+            <button class="cta-button" id="startBtn">
+                <i class="fas fa-play-circle"></i>
+                Commencer maintenant
+            </button>
+            <button class="cta-button secondary" id="rulesBtn">
+                <i class="fas fa-book"></i>
+                Voir les règles du jeu
+            </button>
         </div>
+        
+        <!-- Conteneur de connexion Google masqué -->
         <div id="googleSignInContainer">
             <div id="g_id_onload"
                  data-client_id="514757877097-ke0d5ovl55vbprlc4smkg0t5oudep0v0.apps.googleusercontent.com"
-                 data-callback="handleCredentialResponse"
-                 data-use_fedcm_for_prompt="false">
+                 data-callback="handleCredentialResponse">
             </div>
-            <div class="g_id_signin" data-type="standard"></div>
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-shape="rectangular"
+                 data-theme="outline"
+                 data-text="signin_with"
+                 data-size="large"
+                 data-logo_alignment="left"
+                 data-width="300">
+            </div>
         </div>
     </section>
 
     <!-- Règles du jeu -->
     <section class="rules-section" id="rules">
-        <!-- ... content of rules ... -->
+        <div class="rules-container">
+            <h2 class="section-title">Règles du Jeu</h2>
+            <div class="rules-grid">
+                <div class="rule-card">
+                    <div class="rule-header">
+                        <div class="rule-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <h3 class="rule-title">Budget & Sélection</h3>
+                    </div>
+                    <div class="rule-content">
+                        <ul>
+                            <li>Chaque manager commence avec <span class="highlight">100 M£</span></li>
+                            <li>Ton effectif doit comporter <span class="highlight">15 joueurs</span> : 2 gardiens, 5 défenseurs, 5 milieux, 3 attaquants</li>
+                            <li>Maximum <span class="highlight">4 joueurs d'un même club</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="rule-card">
+                    <div class="rule-header">
+                        <div class="rule-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h3 class="rule-title">Transferts</h3>
+                    </div>
+                    <div class="rule-content">
+                        <ul>
+                            <li><span class="highlight">1 transfert gratuit</span> par Gameweek</li>
+                            <li>Les transferts non utilisés peuvent se cumuler (max 5)</li>
+                            <li>Chaque transfert supplémentaire coûte <span class="highlight">–4 points</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="rule-card">
+                    <div class="rule-header">
+                        <div class="rule-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="rule-title">Capitaine & Vice-capitaine</h3>
+                    </div>
+                    <div class="rule-content">
+                        <ul>
+                            <li>Le capitaine voit ses points <span class="highlight">doublés</span></li>
+                            <li>Avec le chip Triple Captain, ses points sont <span class="highlight">triplés</span></li>
+                            <li>Si le capitaine ne joue pas, le vice-capitaine prend le relais</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="rule-card">
+                    <div class="rule-header">
+                        <div class="rule-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3 class="rule-title">Système de points</h3>
+                    </div>
+                    <div class="rule-content">
+                        <ul>
+                            <li>Buts, passes décisives, clean sheets, minutes jouées</li>
+                            <li>Pénalités ratées, cartons, csc → points négatifs</li>
+                            <li>Carton jaune : <span class="highlight">–1 point</span></li>
+                            <li>Carton rouge : <span class="highlight">–3 points</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="rule-card">
+                    <div class="rule-header">
+                        <div class="rule-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3 class="rule-title">Chips (Pouvoirs spéciaux)</h3>
+                    </div>
+                    <div class="rule-content">
+                        <ul>
+                            <li>Chaque manager a <span class="highlight">8 chips</span> (4 par mi-saison)</li>
+                            <li>Wildcard : changer toute ton équipe sans pénalité</li>
+                            <li>Free Hit : transferts illimités pour 1 semaine</li>
+                            <li>Bench Boost : tes remplaçants marquent aussi</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="rule-card">
+                    <div class="rule-header">
+                        <div class="rule-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3 class="rule-title">Ligues & Coupes</h3>
+                    </div>
+                    <div class="rule-content">
+                        <ul>
+                            <li>Rejoins ou crée des mini-leagues</li>
+                            <li>Classement en total de points</li>
+                            <li>Compétition hebdomadaire et saisonnière</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    
+
+    <!-- Fonctionnalités Centrées -->
+    <section class="features-centered" id="features">
+        <h2 class="section-title">Fonctionnalités Principales</h2>
+        <p>Découvrez les fonctionnalités clés de Fantasy Botola Pro Inwi qui vous permettront de créer la meilleure équipe et de rivaliser avec vos amis.</p>
+        
+        <div class="features-options">
+            <div class="feature-option">
+                <div class="feature-option-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Gestion d'Équipe</h3>
+                <p>Constituez votre équipe idéale avec un budget limité et gérez vos transferts chaque semaine.</p>
+                <a href="#transfers" class="feature-option-link nav-link">En savoir plus</a>
+            </div>
+            
+            <div class="feature-option">
+                <div class="feature-option-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3>Classements</h3>
+                <p>Classement global et ligues privées pour rivaliser avec vos amis et la communauté.</p>
+                <a href="#rankings" class="feature-option-link nav-link">En savoir plus</a>
+            </div>
+            
+            <div class="feature-option">
+                <div class="feature-option-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Points en Temps Réel</h3>
+                <p>Les points sont calculés automatiquement après chaque match selon les performances réelles.</p>
+                <a href="#rules" class="feature-option-link nav-link">Voir les règles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classements -->
+    <section class="rankings" id="rankings">
+        <div class="rankings-content">
+            <h2 class="section-title">Classements</h2>
+            <p>Montez dans le classement général ou rivalisez avec vos amis dans des ligues privées. Les meilleurs managers de la Botola Pro Inwi seront récompensés à la fin de la saison!</p>
+            <div class="features-options">
+                <div class="feature-option">
+                    <div class="feature-option-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Classement Global</h3>
+                    <p>Classement de tous les participants de la plateforme</p>
+                </div>
+                <div class="feature-option">
+                    <div class="feature-option-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Ligues Privées</h3>
+                    <p>Créez ou rejoignez des ligues avec vos amis</p>
+                </div>
+                <div class="feature-option">
+                    <div class="feature-option-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Récompenses</h3>
+                    <p>Gagnez des prix pour vos performances</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transferts -->
+    <section class="transfers" id="transfers">
+        <div class="transfers-content">
+            <h2 class="section-title">Gestion des Transferts</h2>
+            <p>Gérez votre équipe chaque semaine avec notre système de transferts intelligent. Utilisez vos transferts gratuits judicieusement pour maximiser vos points!</p>
+            <div class="features-options">
+                <div class="feature-option">
+                    <div class="feature-option-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Transferts Hebdomadaires</h3>
+                    <p>1 transfert gratuit par Gameweek, cumulable jusqu'à 5</p>
+                </div>
+                <div class="feature-option">
+                    <div class="feature-option-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Coût des Transferts</h3>
+                    <p>Chaque transfert supplémentaire coûte 4 points</p>
+                </div>
+                <div class="feature-option">
+                    <div class="feature-option-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Chips Spéciaux</h3>
+                    <p>Utilisez vos chips pour des transferts illimités</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
-       <!-- ... footer content ... -->
+        <div class="footer-content">
+            <div class="footer-logo">Fantasy <span>Botola Pro</span> Inwi</div>
+            <p>La plateforme officielle de fantasy football pour la Botola Pro Inwi 2025/2026</p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 Fantasy Botola Pro Inwi. Tous droits réservés.
+            </div>
+        </div>
     </footer>
 
-    <!-- Username Modal -->
-    <div class="modal-overlay" id="usernameModal">
-        <div class="modal-content">
-            <h2 class="modal-title">Dernière étape !</h2>
-            <p class="modal-text">Choisissez un nom d'utilisateur pour votre équipe. Ce nom sera visible dans les classements.</p>
-            <input type="text" id="usernameInput" class="modal-input" placeholder="Ex: Rajaoui Champion" required minlength="3" maxlength="20">
-            <button id="submitUsernameBtn" class="modal-button">Confirmer</button>
-        </div>
-    </div>
-
     <script>
+        // Configuration de Google Sign-In
+        // Remplacez "VOTRE_ID_CLIENT_GOOGLE" par votre vrai ID Client
         const GOOGLE_CLIENT_ID = "514757877097-ke0d5ovl55vbprlc4smkg0t5oudep0v0.apps.googleusercontent.com";
+        
+        // Gestion du menu mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('overlay');
+        const navLinks = document.querySelectorAll('.nav-link');
 
-        // --- DOM Elements ---
-        const startBtn = document.getElementById('startBtn');
-        const signInContainer = document.getElementById('googleSignInContainer');
-        const usernameModal = document.getElementById('usernameModal');
-        const usernameInput = document.getElementById('usernameInput');
-        const submitUsernameBtn = document.getElementById('submitUsernameBtn');
-
-        // --- Event Listeners ---
-        startBtn.addEventListener('click', () => {
-            // The GSI library automatically renders the prompt when the button inside signInContainer is clicked.
-            // We just need to make the container visible.
-            signInContainer.style.display = 'block';
-            signInContainer.scrollIntoView({ behavior: 'smooth' });
+        // Ouvrir le menu mobile
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
 
-        submitUsernameBtn.addEventListener('click', handleUsernameSubmit);
+        // Fermer le menu mobile
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
 
-        // --- Functions ---
+        // Fermer le menu en cliquant sur l'overlay
+        overlay.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Fermer le menu quand un lien est cliqué
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                
+                // Retirer la classe active de tous les liens
+                navLinks.forEach(nav => {
+                    nav.classList.remove('active');
+                });
+                
+                // Ajouter la classe active au lien cliqué
+                this.classList.add('active');
+                
+                // Obtenir l'ID de la section cible
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                // Faire défiler vers la section cible
+                if (targetSection) {
+                    targetSection.scrollIntoView({ 
+                        behavior: 'smooth' 
+                    });
+                }
+            });
+        });
+
+        // Gestion des transitions de glissement pour les liens de navigation desktop
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Retirer la classe active de tous les liens
+                document.querySelectorAll('nav a').forEach(nav => {
+                    nav.classList.remove('active');
+                });
+                
+                // Ajouter la classe active au lien cliqué
+                this.classList.add('active');
+                
+                // Obtenir l'ID de la section cible
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                // Faire défiler vers la section cible
+                if (targetSection) {
+                    targetSection.scrollIntoView({ 
+                        behavior: 'smooth' 
+                    });
+                }
+            });
+        });
+
+        // Gestion des transitions pour les boutons de la section hero
+        document.getElementById('rulesBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('nav a[href="#rules"]').classList.add('active');
+            document.querySelector('#rules').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+            
+            // Pour mobile
+            if (window.innerWidth <= 768) {
+                mobileMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Bouton "Commencer maintenant" qui déclenche la connexion Google
+        document.getElementById('startBtn').addEventListener('click', function() {
+            // Afficher le conteneur de connexion Google
+            const signInContainer = document.getElementById('googleSignInContainer');
+            signInContainer.style.display = 'block';
+            
+            // Faire défiler vers le conteneur de connexion
+            signInContainer.scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+            
+            // Initialiser Google Sign-In si ce n'est pas déjà fait
+            initializeGoogleSignIn();
+        });
+
+        // Mise à jour de l'état actif du menu lors du défilement
+        window.addEventListener('scroll', function() {
+            let current = '';
+            
+            // Déterminer quelle section est actuellement visible
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            // Mettre à jour l'état actif du menu desktop
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Mettre à jour l'état actif du menu mobile
+            document.querySelectorAll('.mobile-nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Fonction de gestion de la réponse Google Sign-In
+        function handleCredentialResponse(response) {
+            // Décoder le jeton JWT pour obtenir les informations utilisateur
+            const responsePayload = parseJwt(response.credential);
+            
+            // Afficher les informations utilisateur
+            displayUserProfile(responsePayload);
+            
+            // Masquer le conteneur de connexion Google
+            document.getElementById('googleSignInContainer').style.display = 'none';
+            
+            // Afficher un message de bienvenue
+            alert(`Bienvenue, ${responsePayload.name}! Vous êtes maintenant connecté.`);
+            
+            // Ici, vous pouvez envoyer le jeton à votre serveur pour vérification
+            // et créer/mettre à jour le compte utilisateur dans votre base de données
+            console.log("Jeton d'identification: " + response.credential);
+            
+            // Rediriger vers la page de sélection des joueurs (à adapter selon votre structure)
+            // window.location.href = 'selection.html';
+        }
+
+        // Fonction pour décoder le jeton JWT
         function parseJwt(token) {
             try {
                 const base64Url = token.split('.')[1];
                 const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-                const jsonPayload = decodeURIComponent(atob(base64).split('').map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join(''));
+                const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                }).join(''));
+                
                 return JSON.parse(jsonPayload);
-            } catch (e) { return null; }
+            } catch (e) {
+                return null;
+            }
         }
 
-        function handleCredentialResponse(response) {
-            const googleUser = parseJwt(response.credential);
-            if (googleUser) {
-                // Temporarily store Google data
-                const userData = {
-                    name: googleUser.name,
-                    email: googleUser.email,
-                    picture: googleUser.picture,
-                };
-                localStorage.setItem('tempGoogleUser', JSON.stringify(userData));
-                // Show username modal
-                usernameModal.style.display = 'flex';
-                usernameInput.focus();
+        // Fonction pour afficher le profil utilisateur
+        function displayUserProfile(user) {
+            const userProfile = document.getElementById('userProfile');
+            userProfile.innerHTML = `
+                <div class="user-info">
+                    <img src="${user.picture}" alt="${user.name}" class="user-avatar">
+                    <span class="user-name">${user.name}</span>
+                </div>
+                <button class="logout-btn" id="logoutBtn">Déconnexion</button>
+            `;
+            
+            // Ajouter l'événement de déconnexion
+            document.getElementById('logoutBtn').addEventListener('click', logout);
+        }
+
+        // Fonction de déconnexion
+        function logout() {
+            // Masquer le profil utilisateur
+            document.getElementById('userProfile').innerHTML = '';
+            
+            // Réafficher le bouton "Commencer maintenant"
+            document.getElementById('startBtn').style.display = 'inline-flex';
+            
+            alert('Vous avez été déconnecté avec succès.');
+        }
+
+        // Initialisation de Google Sign-In
+        function initializeGoogleSignIn() {
+            if (typeof google !== 'undefined' && google.accounts) {
+                google.accounts.id.initialize({
+                    client_id: GOOGLE_CLIENT_ID,
+                    callback: handleCredentialResponse
+                });
+                
+                // Rendu du bouton Google Sign-In
+                google.accounts.id.renderButton(
+                    document.querySelector(".g_id_signin"),
+                    { theme: "outline", size: "large" }
+                );
             } else {
-                console.error("Impossible de décoder le jeton JWT");
-                alert("Erreur lors de la connexion. Veuillez réessayer.");
+                console.error("Google Identity Services n'est pas chargé");
             }
         }
 
-        function handleUsernameSubmit() {
-            const username = usernameInput.value.trim();
-            if (username.length < 3 || username.length > 20) {
-                alert("Le nom d'utilisateur doit contenir entre 3 et 20 caractères.");
-                return;
-            }
-            
-            const tempUserData = JSON.parse(localStorage.getItem('tempGoogleUser'));
-            if (!tempUserData) {
-                alert("Erreur de session. Veuillez vous reconnecter.");
-                window.location.reload();
-                return;
-            }
-
-            // Combine Google data with chosen username
-            const finalUserData = { ...tempUserData, username: username };
-            
-            // Save final user object to localStorage
-            localStorage.setItem('fantasyUser', JSON.stringify(finalUserData));
-            localStorage.removeItem('tempGoogleUser');
-            
-            // Redirect to dashboard
-            window.location.href = 'accueil.html';
-        }
-
-        // On page load, check for existing session
+        // Initialisation au chargement de la page
         window.onload = function() {
-            const savedUser = localStorage.getItem('fantasyUser');
-            if (savedUser) {
-                // If user is already logged in, redirect them directly to the dashboard
-                window.location.href = 'accueil.html';
-            }
-            // No 'else' block needed for initialization. 
-            // The GSI library will initialize itself using the HTML attributes on 'g_id_onload' div.
+            // Masquer le bouton "Commencer maintenant" si l'utilisateur est déjà connecté
+            // (vous pouvez implémenter cette logique selon votre système de session)
         };
     </script>
 </body>
